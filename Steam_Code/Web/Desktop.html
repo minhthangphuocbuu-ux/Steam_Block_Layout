@@ -1,0 +1,740 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Steam Store</title>
+        <link rel="stylesheet" href="../Style/Desktop.css" />
+    </head>
+    <body>
+        <!-- =====================================================
+         .container  (body - bọc toàn bộ trang, full-width)
+         Thứ tự đào sâu tiếp theo:
+         1. .header    → .store-nav → .impression-banner
+         2. .main-content (8 khối con)
+         3. .footer
+    ====================================================== -->
+        <div class="container">
+            <!-- ============ 1. HEADER (đang trống, đợi code) ============ -->
+            <header class="header">
+                <div class="header__content">
+                    <!-- Logo Steam: bạn tự đặt file logo_steam.svg (hoặc .png) vào thư mục Image -->
+                    <a
+                        href="#"
+                        class="header__steamLogo"
+                        aria-label="Trang chủ Steam"
+                    >
+                        <img
+                            src="../Image/logo_steam.png"
+                            alt="STEAM"
+                            class="header__logo"
+                        />
+                    </a>
+                    <!-- Thanh điều hướng chính: tất cả màu mặc định giống nhau, hover mới đổi -->
+                    <nav class="header-nav" aria-label="Menu chung">
+                        <a href="#" class="header-nav__page">STORE</a>
+                        <a href="#" class="header-nav__page">COMMUNITY</a>
+                        <a href="#" class="header-nav__page">ABOUT</a>
+                        <a href="#" class="header-nav__page">SUPPORT</a>
+                    </nav>
+                    <!-- Cụm hành động bên phải -->
+                    <div class="header-actions">
+                        <a href="#" class="header-actions__install"
+                            >Install Steam</a
+                        >
+                        <a href="#" class="header-actions__signIn">sign in</a>
+                        <span class="header-actions__divider" aria-hidden="true"
+                            >|</span
+                        >
+                        <button type="button" class="header-actions__language">
+                            <span>language</span>
+                            <svg
+                                class="header-actions__caret"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </header>
+
+            <!-- ============ 2. STORE-NAV (đang trống, đợi code) ========= -->
+            <nav class="store-nav">
+                <div class="store-nav__content">
+                    <!-- Menu trái: 5 links + caret, .store-menu__more ẩn (giữ trong cây) -->
+                    <div class="store-menu">
+                        <div class="store-links">
+                            <a href="#" class="store-links__page">
+                                <span>Browse</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="#" class="store-links__page">
+                                <span>Categories</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="#" class="store-links__page">
+                                <span>Ways to Play</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="#" class="store-links__page">
+                                <span>Special Sections</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                        <!-- Ẩn theo design tree, giữ lại cho đúng cấu trúc -->
+                        <div class="store-menu__more" hidden>More</div>
+                    </div>
+
+                    <!-- Search bar: input + icon kính lúp nằm bên phải -->
+                    <div class="search-bar">
+                        <input
+                            class="search-bar__input"
+                            type="text"
+                            placeholder="Search the store"
+                            aria-label="Search the store"
+                        />
+                        <button
+                            type="submit"
+                            class="search-bar__icon"
+                            aria-label="Search"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <circle
+                                    cx="11"
+                                    cy="11"
+                                    r="7"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="16.5"
+                                    y1="16.5"
+                                    x2="21"
+                                    y2="21"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </nav>
+
+            <!-- ============ 3. IMPRESSION-BANNER (đang trống) =========== -->
+            <section class="impression-banner">
+                <img
+                    class="impression-banner__image"
+                    src="../Image/impression_banner.jpg"
+                    alt="Impression banner"
+                />
+            </section>
+
+            <!-- ============ 4. MAIN-CONTENT (chứa 8 khối con) ========== -->
+            <main class="main-content">
+                <!-- ============ 4.1 Feature & Recommended ============ -->
+                <section class="feature-recommend">
+                    <!-- Header: title trái + Send a Gift Card phải -->
+                    <div class="feature-header">
+                        <h2 class="feature-header__title">
+                            Featured &amp; Recommended
+                        </h2>
+                        <a href="#" class="feature-header__button">
+                            <img
+                                class="feature-header__giftImage"
+                                src="../Image/gift_card.png"
+                                alt="Gift Card"
+                            />
+                            <span class="feature-header__giftText"
+                                >Send a Gift Card</span
+                            >
+                        </a>
+                    </div>
+                    <!-- 3 block cùng cấp: game-content / 2 arrow / transition -->
+                    <div class="recommend-game">
+                        <!-- Mũi tên: tách rời, nằm hoàn toàn ngoài game-content -->
+                        <img
+                            class="arrow arrow__left"
+                            src="../Image/arrow_left.png"
+                            alt="Previous"
+                        />
+                        <img
+                            class="arrow arrow__right"
+                            src="../Image/arrow_right.png"
+                            alt="Next"
+                        />
+                        <!-- Block chính giữa -->
+                        <div class="game-content">
+                            <!-- Ảnh/video lớn -->
+                            <img
+                                class="game-content__image"
+                                src="../Image/games/counter-strike-2/game_main.png"
+                                alt="Counter-Strike 2"
+                            />
+                            <div class="game-description">
+                                <h3 class="game-description__name">
+                                    Counter-Strike 2
+                                </h3>
+                                <div class="game-description__review">
+                                    <span class="game-description__reviewStatus"
+                                        >Very Positive</span
+                                    >
+                                    <span class="game-description__reviewCount"
+                                        >(2,590,888 Reviews)</span
+                                    >
+                                </div>
+                                <!-- 4 ảnh nhỏ 2x2 -->
+                                <div class="game-image">
+                                    <img
+                                        class="game-image__detail"
+                                        src="../Image/games/counter-strike-2/game_shot_1.jpg"
+                                        alt=""
+                                    />
+                                    <img
+                                        class="game-image__detail"
+                                        src="../Image/games/counter-strike-2/game_shot_2.jpg"
+                                        alt=""
+                                    />
+                                    <img
+                                        class="game-image__detail"
+                                        src="../Image/games/counter-strike-2/game_shot_3.jpg"
+                                        alt=""
+                                    />
+                                    <img
+                                        class="game-image__detail"
+                                        src="../Image/games/counter-strike-2/game_shot_4.jpg"
+                                        alt=""
+                                    />
+                                </div>
+                                <!-- Rank: 1 ảnh + 2 dòng chữ -->
+                                <div class="game-rank">
+                                    <img
+                                        class="game-rank__logo"
+                                        src="../Image/rank_icon.svg"
+                                        alt=""
+                                    />
+                                    <div class="game-rank__title">
+                                        <div class="game-rank__topseller">
+                                            Top Seller
+                                        </div>
+                                        <div class="game-rank__subtext">
+                                            Ranked <span>#2</span> globally
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Game có phí
+                                <div class="price-box">
+                                    <div class="price-box__sale">-50%</div>
+                                    <div class="price-box__prices">
+                                        <div class="price-box__original">500.000₫</div>
+                                        <div class="price-box__price">250.000₫</div>
+                                    </div>
+                                </div>-->
+                                <!-- Game miễn phí-->
+                                <div class="price-box">
+                                    <div
+                                        class="price-box__price price-box__price--only"
+                                    >
+                                        Free To Play
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 5 con nhộng: nằm DƯỚI game-content, cùng cấp với game-content + arrows -->
+                        <div class="transition">
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 3"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 4"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 5"
+                            ></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4.2 Sự kiện -->
+                <section class="main-content__event">
+                    <img
+                        class="main-content__event__image"
+                        src="../Image/event_banner.png"
+                        alt="Event"
+                    />
+                </section>
+
+                <!-- 4.3 Discounts & Events -->
+                <section class="discount-event">
+                    <!-- Header: title trái + See More phải -->
+                    <div class="discount-header">
+                        <h2 class="discount-header__title">
+                            Discounts &amp; Events
+                        </h2>
+                        <a href="#" class="discount-header__button">See More</a>
+                    </div>
+                    <!-- 3 block cùng cấp: discount-content / 2 arrow / transition -->
+                    <div class="game-discount">
+                        <!-- Mũi tên (reuse) -->
+                        <img
+                            class="arrow arrow__left"
+                            src="../Image/arrow_left.png"
+                            alt="Previous"
+                        />
+                        <img
+                            class="arrow arrow__right"
+                            src="../Image/arrow_right.png"
+                            alt="Next"
+                        />
+                        <!-- Content: 2 single banner + 1 double banner -->
+                        <div class="discount-content">
+                            <!-- ===== Single banner 1 ===== -->
+                            <div class="discount-detail">
+                                <div class="game-discount-content">
+                                    <span class="game-discount-content__name"
+                                        >WEEKEND DEAL</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="../Image/discount_1.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="price-box">
+                                    <div class="price-box__sale">-35%</div>
+                                    <div class="price-box__prices">
+                                        <div class="price-box__original">
+                                            146.000₫
+                                        </div>
+                                        <div class="price-box__price">
+                                            95.000₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ===== Single banner 2 ===== -->
+                            <div class="discount-detail">
+                                <div class="game-discount-content">
+                                    <span class="game-discount-content__name"
+                                        >TODAY'S DEAL</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="../Image/discount_2.png"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="price-box">
+                                    <div class="price-box__sale">-66%</div>
+                                    <div class="price-box__prices">
+                                        <div class="price-box__original">
+                                            133.000₫
+                                        </div>
+                                        <div class="price-box__price">
+                                            45.000₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- ===== Double banner: 2 single banner chồng dọc ===== -->
+                            <div class="discount-detaildb">
+                                <div class="game-discount-contentdb">
+                                    <span class="game-discount-content__name"
+                                        >TODAY'S DEAL</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="../Image/discount_3.png"
+                                        alt=""
+                                    />
+                                    <div class="price-box">
+                                        <div class="price-box__sale">-75%</div>
+                                        <div class="price-box__prices">
+                                            <div class="price-box__original">
+                                                65.000₫
+                                            </div>
+                                            <div class="price-box__price">
+                                                16.000₫
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="game-discount-contentdb">
+                                    <span class="game-discount-content__name"
+                                        >FRANCHISE SALE</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="../Image/discount_4.png"
+                                        alt=""
+                                    />
+                                    <div class="price-box">
+                                        <div class="price-box__sale">-50%</div>
+                                        <div class="price-box__prices">
+                                            <div class="price-box__original">
+                                                500.000₫
+                                            </div>
+                                            <div class="price-box__price">
+                                                250.000₫
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- 5 con nhộng (reuse) -->
+                        <div class="transition">
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 3"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 4"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 5"
+                            ></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ============ 4.4 Panel: Explore Your Discovery Queue ============ -->
+                <section class="panel">
+                    <!-- Text bên trái -->
+                    <div class="panel-description">
+                        <h2 class="panel-description__title">
+                            Explore Your Discovery Queue
+                        </h2>
+                        <p class="panel-description__body">
+                            Sign in to discover top-selling, new and recommended
+                            titles.
+                        </p>
+                        <a href="#" class="panel-description__button"
+                            >Sign In</a
+                        >
+                    </div>
+
+                    <!-- Ảnh bên phải -->
+                    <img
+                        class="panel__image"
+                        src="../Image/panel_image.png"
+                        alt="Discovery Queue"
+                    />
+                </section>
+
+                <!-- ============ 4.5 Featured Tags Section (2 showcase) ============ -->
+                <section class="featured-tags-section">
+                    <!-- ===== Tag showcase TRÁI: STRATEGY GAMES ===== -->
+                    <div class="tag-showcase">
+                        <!-- Header: 2 dòng text -->
+                        <div class="tag-showcase__header">
+                            <h3 class="tag-showcase__title">STRATEGY GAMES</h3>
+                            <div class="tag-showcase__subtitle">
+                                Featured tag
+                            </div>
+                        </div>
+                        <!-- Grid: 4 game-card 2x2 -->
+                        <div class="tag-showcase__grid">
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_1.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -25%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            299.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            199.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_2.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -50%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            399.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            199.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_3.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -80%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            117.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            23.400₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_4.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -75%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            131.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            32.750₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Footer: See More -->
+                        <div class="tag-showcase-footer">
+                            <button
+                                type="button"
+                                class="tag-showcase-footer__button"
+                            >
+                                See More
+                            </button>
+                        </div>
+                    </div>
+                    <!-- ===== Tag showcase PHẢI: THIRD PERSON SHOOTERS ===== -->
+                    <div class="tag-showcase">
+                        <div class="tag-showcase__header">
+                            <h3 class="tag-showcase__title">
+                                THIRD PERSON SHOOTERS
+                            </h3>
+                            <div class="tag-showcase__subtitle">
+                                Featured tag
+                            </div>
+                        </div>
+                        <div class="tag-showcase__grid">
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_5.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -95%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            79.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            39.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_6.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -75%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            122.500₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            30.625₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_7.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -95%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            99.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            49.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="../Image/tag_game_8.png"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -75%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            207.500₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            51.875₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tag-showcase-footer">
+                            <button
+                                type="button"
+                                class="tag-showcase-footer__button"
+                            >
+                                See More
+                            </button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4.6 Release (Top Sellers / New Releases...) -->
+                <section class="release-section"></section>
+
+                <!-- 4.7 Browse by Category -->
+                <section class="category-section"></section>
+
+                <!-- 4.8 Budget (Under ...₫) -->
+                <section class="budget-section"></section>
+            </main>
+
+            <!-- ============ 5. FOOTER (đang trống, đợi code) ============ -->
+            <footer class="footer">
+                <!-- .footer-content (brand + copyright + social) -->
+                <!-- .footer-links x4 -->
+            </footer>
+        </div>
+    </body>
+</html>
