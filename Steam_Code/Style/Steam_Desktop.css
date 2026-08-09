@@ -1,0 +1,989 @@
+/* ---------- 1. RESET ---------- */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    font-size: 16px; /* 1rem = 16px, mọi rem quy về đây */
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--font-base);
+    background-color: var(--color-bg);
+    color: var(--color-text);
+    line-height: 1.4;
+    min-height: 100vh;
+    -webkit-font-smoothing: antialiased;
+}
+
+img {
+    max-width: 100%;
+    display: block;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+ul,
+ol {
+    list-style: none;
+}
+
+button,
+input {
+    font-family: inherit;
+    font-size: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    outline: none;
+}
+
+/* ---------- 2. CSS VARIABLES ---------- */
+:root {
+    /* Nền */
+    --color-bg: #1b2838; /* nền trang chính */
+    --color-bg-dark: #171a21; /* header / footer */
+    --color-bg-deep: #0e141b; /* nền tối hơn (banner) */
+    --color-bg-light: #2a475e; /* hover / highlight */
+    --color-bg-grey: #323f4b; /* khối xám */
+
+    /* Chữ */
+    --color-text: #c7d5e0;
+    --color-text-light: #ffffff;
+    --color-text-muted: #8f98a0;
+    --color-text-strike: #626366; /* giá gạch ngang */
+
+    /* Accent xanh Steam */
+    --color-accent: #66c0f4;
+    --color-accent-hover: #ffffff;
+
+    /* Nút Install Steam (xanh lá) */
+    --color-green: #5c7e10;
+    --color-green-dark: #58831f;
+    --color-green-text: #ffffff;
+
+    /* Khối giảm giá */
+    --color-discount-bg: #4c6b22;
+    --color-discount-border: #a4d007;
+    --color-discount-text: #a4d007;
+    --color-discount-price: #beee11; /* giá sau giảm */
+
+    /* Font */
+    --font-base: "Motiva Sans", Arial, Helvetica, sans-serif;
+
+    /* Kích thước chuẩn (rem) */
+    --gap-section: 2.5rem; /* khoảng cách giữa các khối lớn */
+    --content-max: 59rem; /* 1200px - bề rộng tối đa nội dung */
+
+    /* hover nút Install Steam */
+    --color-green-hover: #6f9a1a;
+}
+
+/* ---------- 3. LAYOUT NỀN TẢNG ---------- */
+
+/* .container = body: cột dọc full-width, footer luôn đáy */
+.container {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    width: 100%;
+}
+
+/* MAIN-CONTENT: khối chứa 8 section, tự căn giữa nội dung */
+.main-content {
+    flex: 1 0 auto;
+    width: 100%;
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap-section);
+}
+
+/* Khoảng cách cho từng khối con trong main-content
+   (bỏ comment dần khi đào sâu vào từng block) */
+.main-content > * {
+    /* margin-bottom: ...;  -> sẽ đặt riêng theo từng block */
+}
+
+/* ============================================================
+   1. HEADER  (block lớn #1)
+   ============================================================ */
+.header {
+    width: 100%;
+    background-color: var(--color-bg-dark);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
+}
+
+/* Wrapper căn giữa nội dung, full-width nhưng nội dung max-width */
+.header__content {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    min-height: 5rem; /* ~80px, cân đối hơn với nội dung */
+    display: flex;
+    align-items: center; /* căn giữa dọc mọi thành phần */
+    gap: 2rem;
+}
+
+/* --- Logo --- */
+.header__steamLogo {
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.header__logo {
+    height: 2.75rem; /* 44px */
+    width: auto;
+    display: block;
+}
+
+/* --- Nav: chữ mặc định giống nhau hết, hover mới đổi --- */
+.header-nav {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin-left: 2.5rem;
+}
+
+.header-nav__page {
+    position: relative;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #b8b6b4;
+    padding-bottom: 0.25rem;
+    transition: color 0.15s ease;
+}
+
+/* Gạch dưới: chỉ hiện khi hover (CSS thuần, không cần JS) */
+.header-nav__page::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 0.125rem;
+    background-color: var(--color-accent);
+    transform: scaleX(0);
+    transition: transform 0.2s ease;
+}
+
+.header-nav__page:hover {
+    color: var(--color-accent); /* tô màu xanh khi hover */
+}
+
+.header-nav__page:hover::after {
+    transform: scaleX(1); /* gạch dưới xanh */
+}
+/* (Bỏ active state vì click-active cần JS - nằm ngoài scope) */
+
+/* --- Actions: căn giữa dọc + kích thước đầy đủ --- */
+.header-actions {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    align-self: center; /* chắc chắn không bị dính lên trên */
+    gap: 1rem;
+}
+
+.header-actions__install {
+    background: linear-gradient(180deg, #75b022 0%, #588a1b 100%);
+    color: var(--color-green-text);
+    font-size: 0.875rem;
+    font-weight: 700;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    padding: 0.65rem 1.4rem; /* nút to hơn hẳn trước */
+    border-radius: 0.125rem;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    white-space: nowrap;
+    transition: filter 0.15s ease;
+}
+
+.header-actions__install:hover {
+    filter: brightness(1.15);
+}
+
+.header-actions__signIn {
+    font-size: 0.9375rem; /* 15px thay vì 12px */
+    color: #b8b6b4;
+    transition: color 0.15s ease;
+}
+
+.header-actions__signIn:hover {
+    color: var(--color-text-light);
+}
+
+.header-actions__divider {
+    color: var(--color-text-strike);
+    font-size: 0.9375rem;
+}
+
+.header-actions__language {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.9375rem;
+    color: #b8b6b4;
+    cursor: pointer;
+    transition: color 0.15s ease;
+}
+
+.header-actions__language:hover {
+    color: var(--color-text-light);
+}
+
+.header-actions__caret {
+    width: 0.75rem;
+    height: 0.75rem;
+}
+
+/* ============================================================
+   2. STORE-NAV  (block lớn #2)
+   ============================================================ */
+.store-nav {
+    position: sticky;
+    top: 0;
+    z-index: 900;
+    width: 100%;
+    background: linear-gradient(180deg, #1b2838 0%, #16212d 100%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+/* Wrapper căn giữa nội dung, khớp header */
+.store-nav__content {
+    max-width: var(--content-max);
+    margin-inline: auto;
+    padding-inline: 1rem;
+    min-height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+}
+
+/* --- Menu trái --- */
+.store-menu {
+    display: flex;
+    align-items: center;
+}
+
+.store-links {
+    display: flex;
+    align-items: center;
+    gap: 1.75rem;
+}
+
+.store-links__page {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9375rem; /* 15px */
+    color: var(--color-text);
+    white-space: nowrap;
+    transition: color 0.15s ease;
+}
+
+.store-links__page:hover {
+    color: var(--color-accent); /* tô xanh khi hover */
+}
+
+.store-links__caret {
+    width: 0.75rem;
+    height: 0.75rem;
+    opacity: 0.65;
+}
+
+/* Ẩn theo design tree (.store-menu__more hidden) */
+.store-menu__more {
+    display: none;
+}
+
+/* --- Search bar --- */
+.search-bar {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 20rem;
+}
+
+.search-bar__input {
+    width: 100%;
+    background-color: #141e2a;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: 0.125rem;
+    padding: 0.5rem 3rem 0.5rem 0.75rem; /* chừa khoảng cho nút bên phải */
+    font-size: 0.875rem;
+    color: var(--color-text-light);
+    transition: border-color 0.15s ease;
+}
+
+.search-bar__input::placeholder {
+    color: #6f7d8c;
+}
+
+.search-bar__input:focus {
+    border-color: var(--color-accent);
+}
+
+/* Nút tìm kiếm: nền xanh + icon trắng, dính vào mép phải trong ô */
+.search-bar__icon {
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-accent); /* nền xanh #66c0f4 */
+    color: #ffffff; /* icon trắng */
+    border: none;
+    border-radius: 0 0.125rem 0.125rem 0; /* chỉ bo góc phải cho khớp ô input */
+    cursor: pointer;
+    padding: 0;
+    transition: background-color 0.15s ease;
+}
+
+.search-bar__icon:hover {
+    background-color: #54a5d6; /* đậm hơn khi hover */
+}
+
+.search-bar__icon svg {
+    width: 1rem;
+    height: 1rem;
+}
+
+/* ============================================================
+   3. Impression banner
+   ============================================================ */
+.impression-banner {
+    width: 100%;
+}
+.impression-banner__image {
+    display: block;
+    width: 100%;
+    max-height: 22rem;
+    object-fit: cover;
+    object-position: center;
+    margin-bottom: 1em;
+}
+
+/* ============================================================
+   4.1 FEATURE & RECOMMENDED
+   ============================================================ */
+.feature-recommend {
+    width: 100%;
+}
+
+/* --- Header: title trái, Send a Gift Card phải --- */
+.feature-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.feature-header__title {
+    color: var(--color-text-light);
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+/* Header: title trái, Send a Gift Card phải */
+.feature-header__button {
+    display: inline-flex;
+    align-items: flex-start;
+    text-decoration: none;
+}
+
+/* Ảnh card art: cùng chiều cao với khối text, nhích xuống 0.05rem rồi đè lên mép trái */
+.feature-header__giftImage {
+    height: 2rem; /* = chiều cao khối text */
+    width: auto;
+    position: relative;
+    z-index: 2;
+    margin-top: 0.1rem;
+    margin-right: -1.25rem;
+    display: block;
+}
+
+/* Text gradient: cùng chiều cao, padding-trái rộng để ảnh đè không mất chữ */
+.feature-header__giftText {
+    background: linear-gradient(135deg, #2a475e 0%, #66c0f4 100%);
+    color: #ffffff;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    height: 2rem;
+    display: inline-flex;
+    align-items: center;
+    padding: 0 0.9rem 0 1.2rem;
+    border-radius: 0.25rem;
+    white-space: nowrap;
+    box-sizing: border-box;
+}
+
+/* --- Carousel chính --- */
+.recommend-game {
+    position: relative;
+}
+
+/* Mũi tên: tách rời khỏi block giữa, là hình ảnh (img) */
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 5;
+    width: 2.5rem;
+    height: 2.5rem;
+    object-fit: contain;
+    cursor: pointer;
+    opacity: 0.85;
+    transition: opacity 0.15s ease;
+}
+.arrow:hover {
+    opacity: 1;
+}
+
+.arrow__left {
+    left: -3rem;
+}
+.arrow__right {
+    right: -3rem;
+}
+
+/* --- Block giữa: ảnh lớn trái + mô tả phải --- */
+.game-content {
+    display: flex;
+    align-items: stretch;
+    background: linear-gradient(135deg, #2a475e 0%, #16212d 100%);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+.game-content__image {
+    width: 62%;
+    flex-shrink: 0;
+    object-fit: cover;
+    display: block;
+}
+
+.game-description {
+    flex: 1;
+    padding: 1rem 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    min-width: 0;
+}
+
+.game-description__name {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    font-weight: 600;
+    line-height: 1.2;
+}
+
+.game-description__review {
+    display: flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 0.25rem;
+    font-size: 0.8125rem;
+}
+
+.game-description__reviewStatus {
+    color: var(--color-accent); /* Very Positive -> xanh Steam */
+    font-weight: 600;
+}
+
+.game-description__reviewCount {
+    color: var(--color-text-muted);
+}
+
+/* 4 ảnh nhỏ 2x2 */
+.game-image {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.25rem;
+}
+
+.game-image__detail {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    border-radius: 0.125rem;
+    background-color: var(--color-bg-grey);
+}
+
+/* Rank: 1 ảnh + 2 dòng chữ */
+.game-rank {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.game-rank__logo {
+    width: 2rem;
+    height: 2rem;
+    flex-shrink: 0;
+}
+
+.game-rank__title {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.25;
+}
+
+.game-rank__topseller {
+    color: var(--color-text-light);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+}
+
+.game-rank__subtext {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+.game-rank__subtext span {
+    color: var(--color-text-light);
+    font-weight: 600;
+}
+
+/* Giá: góc phải dưới */
+.price-box {
+    margin-top: auto; /* đẩy xuống đáy */
+    align-self: flex-end; /* nằm góc phải */
+    display: flex;
+    align-items: stretch; /* sale + prices cùng chiều cao */
+    font-size: 0;
+}
+
+/* Khối 1: sale (-50%) */
+.price-box__sale {
+    background-color: var(--color-discount-bg);
+    color: var(--color-discount-text);
+    display: flex;
+    align-items: center;
+    padding: 0 0.6rem;
+    font-size: 0.875rem;
+    font-weight: 600;
+    border-radius: 0.125rem 0 0 0.125rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+/* Khối 2: giá gốc + giá sau giảm (chung 1 khối, cùng hàng) */
+.price-box__prices {
+    background-color: var(--color-bg-dark);
+    border-radius: 0 0.125rem 0.125rem 0;
+    padding: 0.5rem 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+}
+
+.price-box__original {
+    color: grey;
+    text-decoration: line-through;
+    font-size: 0.8125rem;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.price-box__price {
+    color: white;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* Biến thể chỉ 1 giá (Free To Play) */
+.price-box__price--only {
+    background-color: var(--color-bg-dark);
+    color: white;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.125rem;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* 5 con nhộng (pill): nằm dưới game-content, cùng cấp với game-content + arrows */
+.transition {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.transition__button {
+    width: 1.5rem;
+    height: 0.375rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.transition__button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Con nhộng đầu = slide đang hiển thị */
+.transition__button:first-child {
+    background-color: var(--color-text-light);
+}
+
+/* ============================================================
+   4.2 EVENT BANNER
+   ============================================================ */
+.main-content__event {
+    width: 100%;
+}
+.main-content__event__image {
+    display: block;
+    width: 100%;
+    max-width: var(--content-max); /* 59rem - bằng game-content */
+    margin-inline: auto; /* căn giữa, có khoảng trống 2 bên */
+    height: 25vh; /* 1/4 màn hình desktop */
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ============================================================
+   4.3 DISCOUNTS & EVENTS
+   ============================================================ */
+.discount-event {
+    width: 100%;
+    /* Tỉ lệ banner: label = 1/20 ảnh single (~15px) */
+    --banner-img-h: 18.75rem; /* chiều cao ảnh single banner (~300px) */
+    --banner-label-h: 0.9375rem; /* label ~15px = 1/20 ảnh */
+    --banner-img-double: calc(var(--banner-img-h) * 2 / 5); /* 2/5 ảnh single */
+}
+
+/* --- Header --- */
+.discount-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.discount-header__title {
+    color: var(--color-text-light);
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+.discount-header__button {
+    background-color: gray;
+    color: black;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(102, 192, 244, 0.4);
+    border-radius: 0.125rem;
+    white-space: nowrap;
+    transition: all 0.15s ease;
+}
+
+/* --- Carousel container (để arrow định vị) --- */
+.game-discount {
+    position: relative;
+}
+
+/* --- 3 block: 2 single + 1 double, hàng ngang, căn trên --- */
+.discount-content {
+    display: flex;
+    align-items: stretch;
+    gap: 1.5rem;
+}
+
+/* === SINGLE BANNER === */
+.discount-detail {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.game-discount-content {
+    position: relative;
+    width: 100%;
+}
+
+.game-discount-content__image {
+    display: block;
+    width: 100%;
+    height: var(--banner-img-h);
+    object-fit: cover;
+}
+
+/* Nhãn góc trên trái: viền trái trùng viền trái ảnh;
+   nửa trên nhích lên trên ảnh, nửa dưới đè lên ảnh */
+.game-discount-content__name {
+    position: absolute;
+    top: calc(var(--banner-label-h) / 2 * -1); /* nhích lên 1 nửa label */
+    left: 0;
+    height: var(--banner-label-h);
+    line-height: var(--banner-label-h);
+    padding: 0 0.5rem;
+    background: linear-gradient(135deg, purple 0%, pink 100%);
+    color: white;
+    font-size: 0.625rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    white-space: nowrap;
+    z-index: 2;
+}
+
+/* === DOUBLE BANNER === */
+.discount-detaildb {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.game-discount-contentdb {
+    position: relative;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.game-discount-contentdb .game-discount-content__image {
+    height: var(--banner-img-double);
+}
+
+/* ============================================================
+   4.4 PANEL - Explore Your Discovery Queue
+   ============================================================ */
+.panel {
+    width: 100%;
+    max-width: var(--content-max); /* 59rem - bằng main-content__event */
+    margin-inline: auto;
+    height: 21vh; /* nhỏ hơn 25vh của main-content__event */
+    min-height: 11rem; /* chặn dưới để không bẹp trên màn hình nhỏ */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 0 2.5rem;
+    /* Gradient tím → xanh (phương án A) */
+    background: linear-gradient(135deg, #654c9e 0%, #2a6fb0 100%);
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+/* --- Text bên trái --- */
+.panel-description {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: #ffffff;
+}
+
+.panel-description__title {
+    font-size: 1.5rem; /* lớn hơn body */
+    font-weight: 700; /* đậm */
+    line-height: 1.2;
+}
+
+.panel-description__body {
+    font-size: 0.9375rem;
+    line-height: 1.4;
+    opacity: 0.92;
+}
+
+/* Nút Sign In: chữ trắng, nền xanh */
+.panel-description__button {
+    display: inline-block;
+    margin-top: 0.25rem;
+    background-color: var(--color-accent);
+    color: white;
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    padding: 0.6rem 1.4rem;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.panel-description__button:hover {
+    filter: brightness(1.15);
+}
+
+/* --- Ảnh bên phải --- */
+.panel__image {
+    height: 100%;
+    width: auto;
+    max-width: 45%;
+    object-fit: cover;
+    object-position: center;
+    flex-shrink: 0;
+    display: block;
+}
+
+/* ============================================================
+   4.5 FEATURED TAGS SECTION (2 showcase)
+   ============================================================ */
+.featured-tags-section {
+    width: 100%;
+    display: flex;
+    gap: 1em;
+}
+
+.tag-showcase {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    border-radius: 0.25rem;
+    overflow: hidden;
+}
+
+/* --- Header (2 dòng text) --- */
+.tag-showcase__header {
+    padding: 1em 1em 0.25em;        /* trên/trái/phải 1em, dưới nhỏ (dính grid) */
+}
+
+.tag-showcase__title {
+    color: var(--color-text-light);
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.tag-showcase__subtitle {
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+}
+
+.tag-showcase__grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1em;
+    padding: 1em;
+    background-color: #2a475e;
+    border-radius: 0.25rem;
+}
+
+/* --- Game card: ảnh trên + discount-box dưới --- */
+.game-card {
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+}
+
+.game-card__image {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    border-radius: 0.125rem;
+    background-color: var(--color-bg-grey);
+}
+
+/* --- Discount box: reuse kiểu dáng price-box --- */
+.discount-box {
+    display: flex;
+    align-self: flex-end;
+    align-items: stretch;
+    font-size: 0;
+}
+
+.discount-box__percentage {
+    background-color: var(--color-discount-bg);
+    color: var(--color-discount-text);
+    display: flex;
+    align-items: center;
+    padding: 0 0.5rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    border-radius: 0.125rem 0 0 0.125rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    white-space: nowrap;
+}
+
+.discount-box__prices {
+    background-color: var(--color-bg-dark);
+    border-radius: 0 0.125rem 0.125rem 0;
+    padding: 0.35rem 0.6rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    min-width: 0;
+}
+
+.discount-box__original {
+    color: grey;
+    text-decoration: line-through;
+    font-size: 0.75rem;
+    opacity: 0.8;
+    white-space: nowrap;
+}
+
+.discount-box__price {
+    color: white;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.tag-showcase-footer {
+    display: flex;
+    justify-content: flex-end;
+    margin: 10px 0px 0px 0px;
+}
+
+.tag-showcase-footer__button {
+    background-color: #d6d6d6;
+    color: #000000;
+    border: none;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    width: auto;
+    transition: filter 0.15s ease;
+}
+.tag-showcase-footer__button:hover {
+    filter: brightness(0.92);
+}
+
+/* ---------- 4. TRẠNG THÁI CHỜ (TẠM, SẼ BỎ DẦN) ---------- */
+/* Chỉ để hình dung khung xương, sau mỗi bước đào sâu sẽ thay bằng code thật */
+.header,
+.store-nav,
+.impression-banner,
+.main-content > section,
+.footer {
+    /* min-height: 3rem; */
+}
