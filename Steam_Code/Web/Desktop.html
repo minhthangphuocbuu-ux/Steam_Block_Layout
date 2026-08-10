@@ -1,355 +1,690 @@
 <!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Steam Store</title>
+        <link rel="stylesheet" href="../Style/Desktop.css" />
+    </head>
 
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Steam Store</title>
-    <link rel="stylesheet" href="../Style/Desktop.css" />
-</head>
-
-<body>
-    <!-- =====================================================
+    <body>
+        <!-- =====================================================
          .container  (body - bọc toàn bộ trang, full-width)
          Thứ tự đào sâu tiếp theo:
          1. .header    → .store-nav → .impression-banner
          2. .main-content (8 khối con)
          3. .footer
         ====================================================== -->
-    <div class="container">
-        <!-- ============ 1. HEADER ============ -->
-        <header class="header">
-            <div class="header__content">
-                <a href="#" class="header__steamLogo" aria-label="Trang chủ Steam">
-                    <img src="../Image/logo_steam.png" alt="STEAM" class="header__logo" />
-                </a>
-                <nav class="header-nav" aria-label="Menu chung">
-                    <a href="#" class="header-nav__page">STORE</a>
-                    <a href="#" class="header-nav__page">COMMUNITY</a>
-                    <a href="#" class="header-nav__page">ABOUT</a>
-                    <a href="#" class="header-nav__page">SUPPORT</a>
-                </nav>
-                <div class="header-actions">
-                    <a href="#" class="header-actions__install">Install Steam</a>
-                    <a href="#" class="header-actions__signIn">sign in</a>
-                    <span class="header-actions__divider" aria-hidden="true">|</span>
-                    <button type="button" class="header-actions__language">
-                        <span>language</span>
-                        <svg class="header-actions__caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                            <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                                d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </header>
-
-        <!-- ============ 2. STORE-NAV ========= -->
-        <nav class="store-nav">
-            <div class="store-nav__content">
-                <div class="store-menu">
-                    <div class="store-links">
-                        <a href="#" class="store-links__page">
-                            <span>Browse</span>
-                            <svg class="store-links__caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="store-links__page">
-                            <span>Categories</span>
-                            <svg class="store-links__caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="store-links__page">
-                            <span>Ways to Play</span>
-                            <svg class="store-links__caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z" />
-                            </svg>
-                        </a>
-                        <a href="#" class="store-links__page">
-                            <span>Special Sections</span>
-                            <svg class="store-links__caret" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-                                <path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd"
-                                    d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z" />
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="store-menu__more" hidden>More</div>
-                </div>
-                <div class="search-bar">
-                    <input class="search-bar__input" type="text" placeholder="Search the store"
-                        aria-label="Search the store" />
-                    <button type="submit" class="search-bar__icon" aria-label="Search">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <circle cx="11" cy="11" r="7" stroke="currentColor" stroke-width="2" />
-                            <line x1="16.5" y1="16.5" x2="21" y2="21" stroke="currentColor" stroke-width="2"
-                                stroke-linecap="round" />
-                        </svg>
-                    </button>
-                </div>
-            </div>
-        </nav>
-
-        <!-- ============ 3. IMPRESSION-BANNER =========== -->
-        <section class="impression-banner">
-            <img class="impression-banner__image" src="../Image/impression_banner.jpg" alt="Impression banner" />
-        </section>
-
-        <!-- ============ 4. MAIN-CONTENT ========== -->
-        <main class="main-content">
-            <!-- ============ 4.1 Feature & Recommended ============ -->
-            <section class="feature-recommend">
-                <div class="feature-header">
-                    <h2 class="feature-header__title">Featured &amp; Recommended</h2>
-                    <a href="#" class="feature-header__button">
-                        <img class="feature-header__giftImage" src="../Image/gift_card.png" alt="Gift Card" />
-                        <span class="feature-header__giftText">Send a Gift Card</span>
+        <div class="container">
+            <!-- ============ 1. HEADER ============ -->
+            <header class="header">
+                <div class="header__content">
+                    <a
+                        href="#"
+                        class="header__steamLogo"
+                        aria-label="Trang chủ Steam"
+                    >
+                        <img
+                            src="https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+                            alt="STEAM"
+                            class="header__logo"
+                        />
                     </a>
-                </div>
-                <div class="recommend-game">
-                    <img class="arrow arrow__left" src="../Image/arrow_left.png" alt="Previous" />
-                    <img class="arrow arrow__right" src="../Image/arrow_right.png" alt="Next" />
-                    <div class="game-content">
-                        <img class="game-content__image" src="../Image/games/counter-strike-2/game_main.png"
-                            alt="Counter-Strike 2" />
-                        <div class="game-description">
-                            <h3 class="game-description__name">Counter-Strike 2</h3>
-                            <div class="game-description__review">
-                                <span class="game-description__reviewStatus">Very Positive</span>
-                                <span class="game-description__reviewCount">(2,590,888 Reviews)</span>
-                            </div>
-                            <div class="game-image">
-                                <img class="game-image__detail" src="../Image/games/counter-strike-2/game_shot_1.jpg"
-                                    alt="" />
-                                <img class="game-image__detail" src="../Image/games/counter-strike-2/game_shot_2.jpg"
-                                    alt="" />
-                                <img class="game-image__detail" src="../Image/games/counter-strike-2/game_shot_3.jpg"
-                                    alt="" />
-                                <img class="game-image__detail" src="../Image/games/counter-strike-2/game_shot_4.jpg"
-                                    alt="" />
-                            </div>
-                            <div class="game-rank">
-                                <img class="game-rank__logo" src="../Image/rank_icon.svg" alt="" />
-                                <div class="game-rank__title">
-                                    <div class="game-rank__topseller">Top Seller</div>
-                                    <div class="game-rank__subtext">Ranked <span>#2</span> globally</div>
-                                </div>
-                            </div>
-                            <div class="price-box">
-                                <div class="price-box__price price-box__price--only">Free To Play</div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="transition">
-                        <button type="button" class="transition__button" aria-label="Slide 1"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 2"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 3"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 4"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 5"></button>
+                    <nav class="header-nav" aria-label="Menu chung">
+                        <a href="#" class="header-nav__page">STORE</a>
+                        <a href="#" class="header-nav__page">COMMUNITY</a>
+                        <a href="#" class="header-nav__page">ABOUT</a>
+                        <a href="#" class="header-nav__page">SUPPORT</a>
+                    </nav>
+                    <div class="header-actions">
+                        <a href="#" class="header-actions__install"
+                            >Install Steam</a
+                        >
+                        <a href="#" class="header-actions__signIn">sign in</a>
+                        <span class="header-actions__divider" aria-hidden="true"
+                            >|</span
+                        >
+                        <button type="button" class="header-actions__language">
+                            <span>language</span>
+                            <svg
+                                class="header-actions__caret"
+                                viewBox="0 0 12 12"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    fill="currentColor"
+                                    fill-rule="evenodd"
+                                    clip-rule="evenodd"
+                                    d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                />
+                            </svg>
+                        </button>
                     </div>
                 </div>
-            </section>
+            </header>
 
-            <!-- 4.2 Sự kiện -->
-            <section class="main-content__event">
-                <img class="main-content__event__image" src="../Image/event_banner.png" alt="Event" />
-            </section>
-
-            <!-- 4.3 Discounts & Events -->
-            <section class="discount-event">
-                <div class="discount-header">
-                    <h2 class="discount-header__title">Discounts &amp; Events</h2>
-                    <a href="#" class="discount-header__button">See More</a>
+            <!-- ============ 2. STORE-NAV ========= -->
+            <nav class="store-nav">
+                <div class="store-nav__content">
+                    <div class="store-menu">
+                        <div class="store-links">
+                            <a href="#" class="store-links__page">
+                                <span>Browse</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="#" class="store-links__page">
+                                <span>Categories</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="#" class="store-links__page">
+                                <span>Ways to Play</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                            <a href="#" class="store-links__page">
+                                <span>Special Sections</span>
+                                <svg
+                                    class="store-links__caret"
+                                    viewBox="0 0 12 12"
+                                    fill="none"
+                                    aria-hidden="true"
+                                >
+                                    <path
+                                        fill="currentColor"
+                                        fill-rule="evenodd"
+                                        clip-rule="evenodd"
+                                        d="M5.81 6.36 8.51 3.66l1.18 1.18-3.88 3.88L1.93 4.84 3.11 3.66l2.7 2.7Z"
+                                    />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="store-menu__more" hidden>More</div>
+                    </div>
+                    <div class="search-bar">
+                        <input
+                            class="search-bar__input"
+                            type="text"
+                            placeholder="Search the store"
+                            aria-label="Search the store"
+                        />
+                        <button
+                            type="submit"
+                            class="search-bar__icon"
+                            aria-label="Search"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <circle
+                                    cx="11"
+                                    cy="11"
+                                    r="7"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                />
+                                <line
+                                    x1="16.5"
+                                    y1="16.5"
+                                    x2="21"
+                                    y2="21"
+                                    stroke="currentColor"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
-                <div class="game-discount">
-                    <img class="arrow arrow__left" src="../Image/arrow_left.png" alt="Previous" />
-                    <img class="arrow arrow__right" src="../Image/arrow_right.png" alt="Next" />
-                    <div class="discount-content">
-                        <div class="discount-detail">
-                            <div class="game-discount-content">
-                                <span class="game-discount-content__name">WEEKEND DEAL</span>
-                                <img class="game-discount-content__image" src="../Image/discount_1.png" alt="" />
-                            </div>
-                            <div class="price-box">
-                                <div class="price-box__sale">-35%</div>
-                                <div class="price-box__prices">
-                                    <div class="price-box__original">146.000₫</div>
-                                    <div class="price-box__price">95.000₫</div>
+            </nav>
+
+            <!-- ============ 3. IMPRESSION-BANNER =========== -->
+            <section class="impression-banner">
+                <img
+                    class="impression-banner__image"
+                    src="../Image/impression_banner.jpg"
+                    alt="Impression banner"
+                />
+            </section>
+
+            <!-- ============ 4. MAIN-CONTENT ========== -->
+            <main class="main-content">
+                <!-- ============ 4.1 Feature & Recommended ============ -->
+                <section class="feature-recommend">
+                    <div class="feature-header">
+                        <h2 class="feature-header__title">
+                            Featured &amp; Recommended
+                        </h2>
+                        <a href="#" class="feature-header__button">
+                            <img
+                                class="feature-header__giftImage"
+                                src="https://cdn.fastly.steamstatic.com/store/home/gc_fan.webp"
+                                alt="Gift Card"
+                            />
+                            <span class="feature-header__giftText"
+                                >Send a Gift Card</span
+                            >
+                        </a>
+                    </div>
+                    <div class="recommend-game">
+                        <img
+                            class="arrow arrow__left"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%97%80"
+                            alt="Previous"
+                        />
+                        <img
+                            class="arrow arrow__right"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%96%B6"
+                            alt="Next"
+                        />
+                        <div class="game-content">
+                            <img
+                                class="game-content__image"
+                                src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/6328493f4cc4a8fb83e1149be1cac5a7823fe588/capsule_616x353_2x.jpg?t=1784564069"
+                                alt="Counter-Strike 2"
+                            />
+                            <div class="game-description">
+                                <h3 class="game-description__name">
+                                    Counter-Strike 2
+                                </h3>
+                                <div class="game-description__review">
+                                    <span class="game-description__reviewStatus"
+                                        >Very Positive</span
+                                    >
+                                    <span class="game-description__reviewCount"
+                                        >(2,590,888 Reviews)</span
+                                    >
                                 </div>
-                            </div>
-                        </div>
-                        <div class="discount-detail">
-                            <div class="game-discount-content">
-                                <span class="game-discount-content__name">TODAY'S DEAL</span>
-                                <img class="game-discount-content__image" src="../Image/discount_2.png" alt="" />
-                            </div>
-                            <div class="price-box">
-                                <div class="price-box__sale">-66%</div>
-                                <div class="price-box__prices">
-                                    <div class="price-box__original">133.000₫</div>
-                                    <div class="price-box__price">45.000₫</div>
+                                <div class="game-image">
+                                    <img
+                                        class="game-image__detail"
+                                        src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_0f8cf82d019c614760fd20801f2bb4001da7ea77.1024x768.jpg"
+                                        alt=""
+                                    />
+                                    <img
+                                        class="game-image__detail"
+                                        src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_796601d9d67faf53486eeb26d0724347cea67ddc.1024x768.jpg"
+                                        alt=""
+                                    />
+                                    <img
+                                        class="game-image__detail"
+                                        src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_d830cfd0550fbb64d80e803e93c929c3abb02056.1024x768.jpg"
+                                        alt=""
+                                    />
+                                    <img
+                                        class="game-image__detail"
+                                        src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/730/ss_13bb35638c0267759276f511ee97064773b37a51.1024x768.jpg"
+                                        alt=""
+                                    />
                                 </div>
-                            </div>
-                        </div>
-                        <div class="discount-detaildb">
-                            <div class="game-discount-contentdb">
-                                <span class="game-discount-content__name">TODAY'S DEAL</span>
-                                <img class="game-discount-content__image" src="../Image/discount_3.png" alt="" />
+                                <div class="game-rank">
+                                    <img
+                                        class="game-rank__logo"
+                                        src="https://cdn.fastly.steamstatic.com/store//icons/rank_icon_lg.svg"
+                                        alt=""
+                                    />
+                                    <div class="game-rank__title">
+                                        <div class="game-rank__topseller">
+                                            Top Seller
+                                        </div>
+                                        <div class="game-rank__subtext">
+                                            Ranked <span>#2</span> globally
+                                        </div>
+                                    </div>
+                                </div>
                                 <div class="price-box">
-                                    <div class="price-box__sale">-75%</div>
-                                    <div class="price-box__prices">
-                                        <div class="price-box__original">65.000₫</div>
-                                        <div class="price-box__price">16.000₫</div>
+                                    <div
+                                        class="price-box__price price-box__price--only"
+                                    >
+                                        Free To Play
                                     </div>
                                 </div>
                             </div>
-                            <div class="game-discount-contentdb">
-                                <span class="game-discount-content__name">FRANCHISE SALE</span>
-                                <img class="game-discount-content__image" src="../Image/discount_4.png" alt="" />
+                        </div>
+                        <div class="transition">
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 3"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 4"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 5"
+                            ></button>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- 4.2 Sự kiện -->
+                <section class="main-content__event">
+                    <img
+                        class="main-content__event__image"
+                        src="https://placehold.co/1200x400/2a475e/ffffff?text=Event+Banner"
+                        alt="Event"
+                    />
+                </section>
+
+                <!-- 4.3 Discounts & Events -->
+                <section class="discount-event">
+                    <div class="discount-header">
+                        <h2 class="discount-header__title">
+                            Discounts &amp; Events
+                        </h2>
+                        <a href="#" class="discount-header__button">See More</a>
+                    </div>
+                    <div class="game-discount">
+                        <img
+                            class="arrow arrow__left"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%97%80"
+                            alt="Previous"
+                        />
+                        <img
+                            class="arrow arrow__right"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%96%B6"
+                            alt="Next"
+                        />
+                        <div class="discount-content">
+                            <div class="discount-detail">
+                                <div class="game-discount-content">
+                                    <span class="game-discount-content__name"
+                                        >WEEKEND DEAL</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="https://placehold.co/300x300/2a475e/ffffff?text=Discount"
+                                        alt=""
+                                    />
+                                </div>
                                 <div class="price-box">
-                                    <div class="price-box__sale">-50%</div>
+                                    <div class="price-box__sale">-35%</div>
                                     <div class="price-box__prices">
-                                        <div class="price-box__original">500.000₫</div>
-                                        <div class="price-box__price">250.000₫</div>
+                                        <div class="price-box__original">
+                                            146.000₫
+                                        </div>
+                                        <div class="price-box__price">
+                                            95.000₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="discount-detail">
+                                <div class="game-discount-content">
+                                    <span class="game-discount-content__name"
+                                        >TODAY'S DEAL</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="https://placehold.co/300x300/2a475e/ffffff?text=Discount"
+                                        alt=""
+                                    />
+                                </div>
+                                <div class="price-box">
+                                    <div class="price-box__sale">-66%</div>
+                                    <div class="price-box__prices">
+                                        <div class="price-box__original">
+                                            133.000₫
+                                        </div>
+                                        <div class="price-box__price">
+                                            45.000₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="discount-detaildb">
+                                <div class="game-discount-contentdb">
+                                    <span class="game-discount-content__name"
+                                        >TODAY'S DEAL</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="https://placehold.co/300x300/2a475e/ffffff?text=Discount"
+                                        alt=""
+                                    />
+                                    <div class="price-box">
+                                        <div class="price-box__sale">-75%</div>
+                                        <div class="price-box__prices">
+                                            <div class="price-box__original">
+                                                65.000₫
+                                            </div>
+                                            <div class="price-box__price">
+                                                16.000₫
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="game-discount-contentdb">
+                                    <span class="game-discount-content__name"
+                                        >FRANCHISE SALE</span
+                                    >
+                                    <img
+                                        class="game-discount-content__image"
+                                        src="https://placehold.co/300x300/2a475e/ffffff?text=Discount"
+                                        alt=""
+                                    />
+                                    <div class="price-box">
+                                        <div class="price-box__sale">-50%</div>
+                                        <div class="price-box__prices">
+                                            <div class="price-box__original">
+                                                500.000₫
+                                            </div>
+                                            <div class="price-box__price">
+                                                250.000₫
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
+                        <div class="transition">
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 1"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 2"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 3"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 4"
+                            ></button>
+                            <button
+                                type="button"
+                                class="transition__button"
+                                aria-label="Slide 5"
+                            ></button>
+                        </div>
                     </div>
-                    <div class="transition">
-                        <button type="button" class="transition__button" aria-label="Slide 1"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 2"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 3"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 4"></button>
-                        <button type="button" class="transition__button" aria-label="Slide 5"></button>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- 4.4 Panel: Explore Your Discovery Queue -->
-            <section class="panel">
-                <div class="panel-description">
-                    <h2 class="panel-description__title">Explore Your Discovery Queue</h2>
-                    <p class="panel-description__body">Sign in to discover top-selling, new and recommended titles.</p>
-                    <a href="#" class="panel-description__button">Sign In</a>
-                </div>
-                <img class="panel__image" src="../Image/panel_image.png" alt="Discovery Queue" />
-            </section>
+                <!-- 4.4 Panel: Explore Your Discovery Queue -->
+                <section class="panel">
+                    <div class="panel-description">
+                        <h2 class="panel-description__title">
+                            Explore Your Discovery Queue
+                        </h2>
+                        <p class="panel-description__body">
+                            Sign in to discover top-selling, new and recommended
+                            titles.
+                        </p>
+                        <a href="#" class="panel-description__button"
+                            >Sign In</a
+                        >
+                    </div>
+                    <img
+                        class="panel__image"
+                        src="../Image/panel_image.png"
+                        alt="Discovery Queue"
+                    />
+                </section>
 
-            <!-- 4.5 Featured Tags Section -->
-            <section class="featured-tags-section">
-                <!-- STRATEGY GAMES -->
-                <div class="tag-showcase">
-                    <div class="tag-showcase__header">
-                        <h3 class="tag-showcase__title">STRATEGY GAMES</h3>
-                        <div class="tag-showcase__subtitle">Featured tag</div>
+                <!-- 4.5 Featured Tags Section -->
+                <section class="featured-tags-section">
+                    <!-- STRATEGY GAMES -->
+                    <div class="tag-showcase">
+                        <div class="tag-showcase__header">
+                            <h3 class="tag-showcase__title">STRATEGY GAMES</h3>
+                            <div class="tag-showcase__subtitle">
+                                Featured tag
+                            </div>
+                        </div>
+                        <div class="tag-showcase__grid">
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=Strategy+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -25%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            299.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            199.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=Strategy+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -50%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            399.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            199.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=Strategy+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -80%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            117.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            23.400₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=Strategy+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -75%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            131.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            32.750₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tag-showcase-footer">
+                            <button
+                                type="button"
+                                class="tag-showcase-footer__button"
+                            >
+                                See More
+                            </button>
+                        </div>
                     </div>
-                    <div class="tag-showcase__grid">
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_1.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-25%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">299.000₫</div>
-                                    <div class="discount-box__price">199.500₫</div>
+                    <!-- THIRD PERSON SHOOTERS -->
+                    <div class="tag-showcase">
+                        <div class="tag-showcase__header">
+                            <h3 class="tag-showcase__title">
+                                THIRD PERSON SHOOTERS
+                            </h3>
+                            <div class="tag-showcase__subtitle">
+                                Featured tag
+                            </div>
+                        </div>
+                        <div class="tag-showcase__grid">
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=TPS+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -95%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            79.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            39.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=TPS+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -75%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            122.500₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            30.625₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=TPS+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -95%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            99.000₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            49.500₫
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="game-card">
+                                <img
+                                    class="game-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=TPS+Game"
+                                    alt=""
+                                />
+                                <div class="discount-box">
+                                    <div class="discount-box__percentage">
+                                        -75%
+                                    </div>
+                                    <div class="discount-box__prices">
+                                        <div class="discount-box__original">
+                                            207.500₫
+                                        </div>
+                                        <div class="discount-box__price">
+                                            51.875₫
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_2.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-50%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">399.000₫</div>
-                                    <div class="discount-box__price">199.500₫</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_3.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-80%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">117.000₫</div>
-                                    <div class="discount-box__price">23.400₫</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_4.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-75%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">131.000₫</div>
-                                    <div class="discount-box__price">32.750₫</div>
-                                </div>
-                            </div>
+                        <div class="tag-showcase-footer">
+                            <button
+                                type="button"
+                                class="tag-showcase-footer__button"
+                            >
+                                See More
+                            </button>
                         </div>
                     </div>
-                    <div class="tag-showcase-footer">
-                        <button type="button" class="tag-showcase-footer__button">See More</button>
-                    </div>
-                </div>
-                <!-- THIRD PERSON SHOOTERS -->
-                <div class="tag-showcase">
-                    <div class="tag-showcase__header">
-                        <h3 class="tag-showcase__title">THIRD PERSON SHOOTERS</h3>
-                        <div class="tag-showcase__subtitle">Featured tag</div>
-                    </div>
-                    <div class="tag-showcase__grid">
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_5.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-95%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">79.000₫</div>
-                                    <div class="discount-box__price">39.500₫</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_6.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-75%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">122.500₫</div>
-                                    <div class="discount-box__price">30.625₫</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_7.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-95%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">99.000₫</div>
-                                    <div class="discount-box__price">49.500₫</div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="game-card">
-                            <img class="game-card__image" src="../Image/tag_game_8.png" alt="" />
-                            <div class="discount-box">
-                                <div class="discount-box__percentage">-75%</div>
-                                <div class="discount-box__prices">
-                                    <div class="discount-box__original">207.500₫</div>
-                                    <div class="discount-box__price">51.875₫</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="tag-showcase-footer">
-                        <button type="button" class="tag-showcase-footer__button">See More</button>
-                    </div>
-                </div>
-            </section>
+                </section>
 
-            <!-- ============ 4.6 Popular New Releases ============ -->
-            <!--           <section class="release-section">
+                <!-- ============ 4.6 Popular New Releases ============ -->
+                <!--           <section class="release-section">
                     <div class="release-header">
                         <button type="button" class="release-tab release-tab--active">Popular New Releases</button>
                         <button type="button" class="release-tab">Top Sellers</button>
@@ -361,8 +696,8 @@
                         <div class="release-content">
                             <div class="release-list">
                                 <!-- Card 1 -->
-            <!--  <a href="#" class="release-card">
-                                    <img class="release-card__image" src="../Image/release_game_1.jpg" alt="GRAIN ROT"/>
+                <!--  <a href="#" class="release-card">
+                                    <img class="release-card__image" src="https://placehold.co/616x353/2a475e/ffffff?text=GRAIN+ROT" alt="GRAIN ROT"/>
                                     <div class="release-card__info">
                                         <div class="release-card__description">
                                             <span class="release-card__title">GRAIN ROT</span>
@@ -376,8 +711,8 @@
                                     </div>
                                 </a>
                                 <!-- Card 2 -->
-            <!--   <a href="#" class="release-card">
-                                    <img class="release-card__image" src="../Image/release_game_2.jpg" alt="Chop Chop Inc."/>
+                <!--   <a href="#" class="release-card">
+                                    <img class="release-card__image" src="https://placehold.co/616x353/2a475e/ffffff?text=Chop+Chop+Inc." alt="Chop Chop Inc."/>
                                     <div class="release-card__info">
                                         <div class="release-card__description">
                                             <span class="release-card__title">Chop Chop Inc.</span>
@@ -391,8 +726,8 @@
                                     </div>
                                 </a>
                                 <!-- Card 3 -->
-            <!--   <a href="#" class="release-card">
-                                    <img class="release-card__image" src="../Image/release_game_3.jpg" alt="Japan Stigmatized Property"/>
+                <!--   <a href="#" class="release-card">
+                                    <img class="release-card__image" src="https://placehold.co/616x353/2a475e/ffffff?text=Japan+Stigmatized+Property" alt="Japan Stigmatized Property"/>
                                     <div class="release-card__info">
                                         <div class="release-card__description">
                                             <span class="release-card__title">Japan Stigmatized Property</span>
@@ -406,8 +741,8 @@
                                     </div>
                                 </a>
                                 <!-- Card 4 -->
-            <!--   <a href="#" class="release-card">
-                                    <img class="release-card__image" src="../Image/release_game_4.jpg" alt="Cellar Keeper"/>
+                <!--   <a href="#" class="release-card">
+                                    <img class="release-card__image" src="https://placehold.co/616x353/2a475e/ffffff?text=Cellar+Keeper" alt="Cellar Keeper"/>
                                     <div class="release-card__info">
                                         <div class="release-card__description">
                                             <span class="release-card__title">Cellar Keeper</span>
@@ -421,8 +756,8 @@
                                     </div>
                                 </a>
                                 <!-- Card 5 -->
-            <!--   <a href="#" class="release-card">
-                                    <img class="release-card__image" src="../Image/release_game_5.jpg" alt="Approximately Up"/>
+                <!--   <a href="#" class="release-card">
+                                    <img class="release-card__image" src="https://placehold.co/616x353/2a475e/ffffff?text=Approximately+Up" alt="Approximately Up"/>
                                     <div class="release-card__info">
                                         <div class="release-card__description">
                                             <span class="release-card__title">Approximately Up</span>
@@ -436,8 +771,8 @@
                                     </div>
                                 </a>
                                 <!-- Card 6 -->
-            <!--   <a href="#" class="release-card">
-                                    <img class="release-card__image" src="../Image/release_game_6.jpg" alt="Sovereign Tower"/>
+                <!--   <a href="#" class="release-card">
+                                    <img class="release-card__image" src="https://placehold.co/616x353/2a475e/ffffff?text=Sovereign+Tower" alt="Sovereign Tower"/>
                                     <div class="release-card__info">
                                         <div class="release-card__description">
                                             <span class="release-card__title">Sovereign Tower</span>
@@ -457,428 +792,786 @@
                         <a href="#" class="release-footer__button">All New Releases</a>
                     </div>
                 </section> -->
-            <!-- ============ 4.6 Popular New Releases ============ -->
-            <section class="release-section">
+                <!-- ============ 4.6 Popular New Releases ============ -->
+                <section class="release-section">
+                    <!-- ===== Header: Tab navigation ===== -->
+                    <div class="release-header">
+                        <button
+                            type="button"
+                            class="release-tab release-tab--active"
+                        >
+                            Popular New Releases
+                        </button>
+                        <button type="button" class="release-tab">
+                            Top Sellers
+                        </button>
+                        <button type="button" class="release-tab">
+                            Popular Upcoming
+                        </button>
+                        <button type="button" class="release-tab">
+                            Specials
+                        </button>
+                        <button type="button" class="release-tab">
+                            Trending
+                        </button>
+                    </div>
 
-                <!-- ===== Header: Tab navigation ===== -->
-                <div class="release-header">
-                    <button type="button" class="release-tab release-tab--active">Popular New Releases</button>
-                    <button type="button" class="release-tab">Top Sellers</button>
-                    <button type="button" class="release-tab">Popular Upcoming</button>
-                    <button type="button" class="release-tab">Specials</button>
-                    <button type="button" class="release-tab">Trending</button>
-                </div>
+                    <!-- ===== Body: 2 cột (list + preview) ===== -->
+                    <div class="release-body">
+                        <!-- ===== CỘT TRÁI: danh sách 10 card ===== -->
+                        <div class="release-content">
+                            <div class="release-list">
+                                <!-- Card 1 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=GRAIN+ROT"
+                                        alt="GRAIN ROT"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >GRAIN ROT</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Online Co-op, First-person,
+                                                Survival Horror, Building</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 7 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-10%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >126.000₫</span
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
 
-                <!-- ===== Body: 2 cột (list + preview) ===== -->
-                <div class="release-body">
+                                <!-- Card 2 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=Chop+Chop+Inc."
+                                        alt="Chop Chop Inc."
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Chop Chop Inc.</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Job Simulator, Crafting,
+                                                Comedy, First-Person</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 7 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-10%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >189.500₫</span
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
 
-                    <!-- ===== CỘT TRÁI: danh sách 10 card ===== -->
-                    <div class="release-content">
+                                <!-- Card 3 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=Cellar+Keeper"
+                                        alt="Cellar Keeper"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Cellar Keeper</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Relaxing, Casual, Organizing,
+                                                Collectathon</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 7 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-10%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >69.500₫</span
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
 
-                        <div class="release-list">
+                                <!-- Card 4 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=Approximately+Up"
+                                        alt="Approximately Up"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Approximately Up</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Adventure, Space Sim,
+                                                Simulation</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 7 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-20%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >239.000₫</span
+                                            >
+                                        </div>
+                                    </div>
+                                </a>
 
-                            <!-- Card 1 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_1.jpg" alt="GRAIN ROT" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">GRAIN ROT</span>
-                                        <span class="release-card__genres">Online Co-op, First-person, Survival Horror,
-                                            Building</span>
-                                        <span class="release-card__date">Released: 7 Aug, 2026</span>
+                                <!-- Card 5 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=Sovereign+Tower"
+                                        alt="Sovereign Tower"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Sovereign Tower</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Medieval, Choices Matter,
+                                                Visual Novel</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 6 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-15%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >306.000₫</span
+                                            >
+                                        </div>
                                     </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-10%</span>
-                                        <span class="release-card__price">126.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
 
-                            <!-- Card 2 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_2.jpg"
-                                    alt="Chop Chop Inc." />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Chop Chop Inc.</span>
-                                        <span class="release-card__genres">Job Simulator, Crafting, Comedy,
-                                            First-Person</span>
-                                        <span class="release-card__date">Released: 7 Aug, 2026</span>
+                                <!-- Card 6 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=ReStory"
+                                        alt="ReStory: Chill Electronics Repairs"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >ReStory: Chill Electronics
+                                                Repairs</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Job Simulator, Cozy, Economy,
+                                                Management</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 6 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-10%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >180.000₫</span
+                                            >
+                                        </div>
                                     </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-10%</span>
-                                        <span class="release-card__price">189.500₫</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
 
-                            <!-- Card 3 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_3.jpg"
-                                    alt="Cellar Keeper" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Cellar Keeper</span>
-                                        <span class="release-card__genres">Relaxing, Casual, Organizing,
-                                            Collectathon</span>
-                                        <span class="release-card__date">Released: 7 Aug, 2026</span>
+                                <!-- Card 7 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=IRON+NEST"
+                                        alt="IRON NEST: Heavy Turret Simulator"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >IRON NEST: Heavy Turret
+                                                Simulator</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Military, Simulation,
+                                                Realistic, 3D</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 6 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-25%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >149.000₫</span
+                                            >
+                                        </div>
                                     </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-10%</span>
-                                        <span class="release-card__price">69.500₫</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
 
-                            <!-- Card 4 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_4.jpg"
-                                    alt="Approximately Up" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Approximately Up</span>
-                                        <span class="release-card__genres">Adventure, Space Sim, Simulation</span>
-                                        <span class="release-card__date">Released: 7 Aug, 2026</span>
+                                <!-- Card 8 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=Doloc+Town"
+                                        alt="Doloc Town"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Doloc Town</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Farming Sim, Pixel Graphics,
+                                                Platformer, Cozy</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 6 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-20%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >219.000₫</span
+                                            >
+                                        </div>
                                     </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-20%</span>
-                                        <span class="release-card__price">239.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
 
-                            <!-- Card 5 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_5.jpg"
-                                    alt="Sovereign Tower" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Sovereign Tower</span>
-                                        <span class="release-card__genres">Medieval, Choices Matter, Visual Novel</span>
-                                        <span class="release-card__date">Released: 6 Aug, 2026</span>
+                                <!-- Card 9 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2111980/capsule_616x353.jpg"
+                                        alt="Fields of Mistria"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Fields of Mistria</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Farming Sim, Dating Sim, RPG,
+                                                Life Sim</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 5 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-10%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >173.000₫</span
+                                            >
+                                        </div>
                                     </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-15%</span>
-                                        <span class="release-card__price">306.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
 
-                            <!-- Card 6 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_6.jpg"
-                                    alt="ReStory: Chill Electronics Repairs" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">ReStory: Chill Electronics Repairs</span>
-                                        <span class="release-card__genres">Job Simulator, Cozy, Economy,
-                                            Management</span>
-                                        <span class="release-card__date">Released: 6 Aug, 2026</span>
+                                <!-- Card 10 -->
+                                <a href="#" class="release-card">
+                                    <img
+                                        class="release-card__image"
+                                        src="https://placehold.co/616x353/2a475e/ffffff?text=Cleaning+Up"
+                                        alt="Cleaning Up The Puzzle Gallery"
+                                    />
+                                    <div class="release-card__info">
+                                        <div class="release-card__description">
+                                            <span class="release-card__title"
+                                                >Cleaning Up The Puzzle
+                                                Gallery</span
+                                            >
+                                            <span class="release-card__genres"
+                                                >Relaxing, Casual, Puzzle</span
+                                            >
+                                            <span class="release-card__date"
+                                                >Released: 5 Aug, 2026</span
+                                            >
+                                        </div>
+                                        <div class="release-card__payment">
+                                            <span class="release-card__sale"
+                                                >-10%</span
+                                            >
+                                            <span class="release-card__price"
+                                                >69.500₫</span
+                                            >
+                                        </div>
                                     </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-10%</span>
-                                        <span class="release-card__price">180.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
+                            <!-- /.release-list -->
 
-                            <!-- Card 7 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_7.jpg"
-                                    alt="IRON NEST: Heavy Turret Simulator" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">IRON NEST: Heavy Turret Simulator</span>
-                                        <span class="release-card__genres">Military, Simulation, Realistic, 3D</span>
-                                        <span class="release-card__date">Released: 6 Aug, 2026</span>
-                                    </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-25%</span>
-                                        <span class="release-card__price">149.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 8 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_8.jpg" alt="Doloc Town" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Doloc Town</span>
-                                        <span class="release-card__genres">Farming Sim, Pixel Graphics, Platformer,
-                                            Cozy</span>
-                                        <span class="release-card__date">Released: 6 Aug, 2026</span>
-                                    </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-20%</span>
-                                        <span class="release-card__price">219.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 9 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_9.jpg"
-                                    alt="Fields of Mistria" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Fields of Mistria</span>
-                                        <span class="release-card__genres">Farming Sim, Dating Sim, RPG, Life Sim</span>
-                                        <span class="release-card__date">Released: 5 Aug, 2026</span>
-                                    </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-10%</span>
-                                        <span class="release-card__price">173.000₫</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                            <!-- Card 10 -->
-                            <a href="#" class="release-card">
-                                <img class="release-card__image" src="../Image/release_game_10.jpg"
-                                    alt="Cleaning Up The Puzzle Gallery" />
-                                <div class="release-card__info">
-                                    <div class="release-card__description">
-                                        <span class="release-card__title">Cleaning Up The Puzzle Gallery</span>
-                                        <span class="release-card__genres">Relaxing, Casual, Puzzle</span>
-                                        <span class="release-card__date">Released: 5 Aug, 2026</span>
-                                    </div>
-                                    <div class="release-card__payment">
-                                        <span class="release-card__sale">-10%</span>
-                                        <span class="release-card__price">69.500₫</span>
-                                    </div>
-                                </div>
-                            </a>
-
-                        </div><!-- /.release-list -->
-
-                        <!-- Expand toggle -->
-                        <div class="release-expand">
-                            <span class="release-expand__text">See more:</span>
-                            <a href="#" class="release-expand__button">Popular New Releases</a>
-                            <span class="release-expand__text">or</span>
-                            <a href="#" class="release-expand__button">All New Releases</a>
+                            <!-- Expand toggle -->
+                            <div class="release-expand">
+                                <span class="release-expand__text"
+                                    >See more:</span
+                                >
+                                <a href="#" class="release-expand__button"
+                                    >Popular New Releases</a
+                                >
+                                <span class="release-expand__text">or</span>
+                                <a href="#" class="release-expand__button"
+                                    >All New Releases</a
+                                >
+                            </div>
                         </div>
+                        <!-- /.release-content -->
 
-                    </div><!-- /.release-content -->
-
-                    <!-- ===== CỘT PHẢI: preview panel ===== -->
-                    <aside class="release-preview">
-
-                        <!-- Info block -->
-                        <div class="release-preview__info">
-                            <h3 class="release-preview__title">GRAIN ROT</h3>
-                            <div class="release-preview__meta">
-                                <span class="release-preview__review">Overall User Reviews:</span>
-                                <span class="release-preview__status">Very Positive</span>
-                                <span class="release-preview__number">(452)</span>
+                        <!-- ===== CỘT PHẢI: preview panel ===== -->
+                        <aside class="release-preview">
+                            <!-- Info block -->
+                            <div class="release-preview__info">
+                                <h3 class="release-preview__title">
+                                    GRAIN ROT
+                                </h3>
+                                <div class="release-preview__meta">
+                                    <span class="release-preview__review"
+                                        >Overall User Reviews:</span
+                                    >
+                                    <span class="release-preview__status"
+                                        >Very Positive</span
+                                    >
+                                    <span class="release-preview__number"
+                                        >(452)</span
+                                    >
+                                </div>
+                                <div class="release-preview__tags">
+                                    <a href="#" class="release-preview__tag"
+                                        >Co-Op</a
+                                    >
+                                    <a href="#" class="release-preview__tag"
+                                        >First-Person</a
+                                    >
+                                    <a href="#" class="release-preview__tag"
+                                        >First-Person</a
+                                    >
+                                    <a href="#" class="release-preview__tag"
+                                        >First-Person</a
+                                    >
+                                    <a href="#" class="release-preview__tag"
+                                        >First-Person</a
+                                    >
+                                </div>
                             </div>
-                            <div class="release-preview__tags">
-                                <a href="#" class="release-preview__tag">Co-Op</a>
-                                <a href="#" class="release-preview__tag">First-Person</a>
-                                <a href="#" class="release-preview__tag">First-Person</a>
-                                <a href="#" class="release-preview__tag">First-Person</a>
-                                <a href="#" class="release-preview__tag">First-Person</a>
-                            </div>
+
+                            <!-- 4 ảnh screenshot dưới (2×2) -->
+                            <img
+                                class="release-preview__image"
+                                src="https://placehold.co/600x338/2a475e/ffffff?text=Screenshot"
+                                alt="GRAIN ROT Screenshot 5"
+                            />
+                            <img
+                                class="release-preview__image"
+                                src="https://placehold.co/600x338/2a475e/ffffff?text=Screenshot"
+                                alt="GRAIN ROT Screenshot 6"
+                            />
+                            <img
+                                class="release-preview__image"
+                                src="https://placehold.co/600x338/2a475e/ffffff?text=Screenshot"
+                                alt="GRAIN ROT Screenshot 7"
+                            />
+                            <img
+                                class="release-preview__image"
+                                src="https://placehold.co/600x338/2a475e/ffffff?text=Screenshot"
+                                alt="GRAIN ROT Screenshot 8"
+                            />
+                        </aside>
+                        <!-- /.release-preview -->
+                    </div>
+                    <!-- /.release-body -->
+                </section>
+
+                <!-- ============ 4.7 Browse by Category ============ -->
+                <section class="category-section">
+                    <div class="category-header">
+                        <h2 class="category-header__title">
+                            Browse by Category
+                        </h2>
+                    </div>
+                    <div class="category-picks">
+                        <img
+                            class="arrow arrow__left"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%97%80"
+                            alt="Previous"
+                        />
+                        <img
+                            class="arrow arrow__right"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%96%B6"
+                            alt="Next"
+                        />
+                        <div class="category-list">
+                            <a
+                                href="#"
+                                class="category-card"
+                                style="
+                                    background-image: url(&quot;https://placehold.co/400x267/2a475e/ffffff?text=VISUAL+NOVEL&quot;);
+                                "
+                            >
+                                <span class="category-card__text"
+                                    >VISUAL NOVEL</span
+                                >
+                            </a>
+                            <a
+                                href="#"
+                                class="category-card"
+                                style="
+                                    background-image: url(&quot;https://placehold.co/400x267/2a475e/ffffff?text=CO-OPERATIVE&quot;);
+                                "
+                            >
+                                <span class="category-card__text"
+                                    >CO-OPERATIVE</span
+                                >
+                            </a>
+                            <a
+                                href="#"
+                                class="category-card"
+                                style="
+                                    background-image: url(&quot;https://placehold.co/400x267/2a475e/ffffff?text=STRATEGY&quot;);
+                                "
+                            >
+                                <span class="category-card__text"
+                                    >STRATEGY</span
+                                >
+                            </a>
+                            <a
+                                href="#"
+                                class="category-card"
+                                style="
+                                    background-image: url(&quot;https://placehold.co/400x267/2a475e/ffffff?text=ALL+SPORTS&quot;);
+                                "
+                            >
+                                <span class="category-card__text"
+                                    >ALL SPORTS</span
+                                >
+                            </a>
+                            <a
+                                href="#"
+                                class="category-card"
+                                style="
+                                    background-image: url(&quot;https://placehold.co/400x267/2a475e/ffffff?text=CASUAL&quot;);
+                                "
+                            >
+                                <span class="category-card__text">CASUAL</span>
+                            </a>
                         </div>
+                        <div class="category-carousel">
+                            <button
+                                type="button"
+                                class="category-carousel__button category-carousel__button--active"
+                                aria-label="Page 1"
+                            ></button>
+                            <button
+                                type="button"
+                                class="category-carousel__button"
+                                aria-label="Page 2"
+                            ></button>
+                            <button
+                                type="button"
+                                class="category-carousel__button"
+                                aria-label="Page 3"
+                            ></button>
+                            <button
+                                type="button"
+                                class="category-carousel__button"
+                                aria-label="Page 4"
+                            ></button>
+                        </div>
+                    </div>
+                </section>
 
-                        <!-- 4 ảnh screenshot dưới (2×2) -->
-                        <img class="release-preview__image" src="../Image/release_ss_5.jpg"
-                            alt="GRAIN ROT Screenshot 5" />
-                        <img class="release-preview__image" src="../Image/release_ss_6.jpg"
-                            alt="GRAIN ROT Screenshot 6" />
-                        <img class="release-preview__image" src="../Image/release_ss_7.jpg"
-                            alt="GRAIN ROT Screenshot 7" />
-                        <img class="release-preview__image" src="../Image/release_ss_8.jpg"
-                            alt="GRAIN ROT Screenshot 8" />
+                <!-- ============ 4.8 Budget (Under ...₫) ============ -->
+                <section class="budget-section">
+                    <div class="budget-header">
+                        <h2 class="budget-header__title">Under 200.000₫</h2>
+                        <div class="budget-option">
+                            <span class="budget-option__text">See more:</span>
+                            <button
+                                type="button"
+                                class="budget-option__button budget-option__button--active"
+                            >
+                                Under 200.000₫
+                            </button>
+                            <button type="button" class="budget-option__button">
+                                Under 100.000₫
+                            </button>
+                        </div>
+                    </div>
+                    <div class="budget-picks">
+                        <img
+                            class="arrow arrow__left"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%97%80"
+                            alt="Previous"
+                        />
+                        <img
+                            class="arrow arrow__right"
+                            src="https://placehold.co/40x40/1b2838/66c0f4?text=%E2%96%B6"
+                            alt="Next"
+                        />
+                        <div class="budget-list">
+                            <a href="#" class="budget-card">
+                                <img
+                                    class="budget-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=IRON+NEST"
+                                    alt="IRON NEST: Heavy Turret Simulator"
+                                />
+                                <div class="budget-payment">
+                                    <span class="budget-payment__sale"
+                                        >-25%</span
+                                    >
+                                    <span class="budget-payment__price"
+                                        >149.000₫</span
+                                    >
+                                </div>
+                            </a>
+                            <a href="#" class="budget-card">
+                                <img
+                                    class="budget-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=ReStory"
+                                    alt="ReStory: Chill Electronics Repairs"
+                                />
+                                <div class="budget-payment">
+                                    <span class="budget-payment__sale"
+                                        >-10%</span
+                                    >
+                                    <span class="budget-payment__price"
+                                        >180.000₫</span
+                                    >
+                                </div>
+                            </a>
+                            <a href="#" class="budget-card">
+                                <img
+                                    class="budget-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=GRAIN+ROT"
+                                    alt="GRAIN ROT"
+                                />
+                                <div class="budget-payment">
+                                    <span class="budget-payment__sale"
+                                        >-10%</span
+                                    >
+                                    <span class="budget-payment__price"
+                                        >126.000₫</span
+                                    >
+                                </div>
+                            </a>
+                            <a href="#" class="budget-card">
+                                <img
+                                    class="budget-card__image"
+                                    src="https://shared.fastly.steamstatic.com/store_item_assets/steam/apps/2111980/capsule_616x353.jpg"
+                                    alt="Fields of Mistria"
+                                />
+                                <div class="budget-payment">
+                                    <span class="budget-payment__sale"
+                                        >-10%</span
+                                    >
+                                    <span class="budget-payment__price"
+                                        >173.000₫</span
+                                    >
+                                </div>
+                            </a>
+                            <a href="#" class="budget-card">
+                                <img
+                                    class="budget-card__image"
+                                    src="https://placehold.co/616x353/2a475e/ffffff?text=Shift+at+Midnight"
+                                    alt="Shift at Midnight"
+                                />
+                                <div class="budget-payment">
+                                    <span class="budget-payment__price"
+                                        >149.500₫</span
+                                    >
+                                </div>
+                            </a>
+                        </div>
+                        <div class="budget-carousel">
+                            <button
+                                type="button"
+                                class="budget-carousel__button budget-carousel__button--active"
+                                aria-label="Page 1"
+                            ></button>
+                            <button
+                                type="button"
+                                class="budget-carousel__button"
+                                aria-label="Page 2"
+                            ></button>
+                            <button
+                                type="button"
+                                class="budget-carousel__button"
+                                aria-label="Page 3"
+                            ></button>
+                            <button
+                                type="button"
+                                class="budget-carousel__button"
+                                aria-label="Page 4"
+                            ></button>
+                            <button
+                                type="button"
+                                class="budget-carousel__button"
+                                aria-label="Page 5"
+                            ></button>
+                        </div>
+                    </div>
+                </section>
+            </main>
 
-                    </aside><!-- /.release-preview -->
-
-                </div><!-- /.release-body -->
-
-            </section>
-
-
-            <!-- ============ 4.7 Browse by Category ============ -->
-            <section class="category-section">
-                <div class="category-header">
-                    <h2 class="category-header__title">Browse by Category</h2>
-                </div>
-                <div class="category-picks">
-                    <img class="arrow arrow__left" src="../Image/arrow_left.png" alt="Previous" />
-                    <img class="arrow arrow__right" src="../Image/arrow_right.png" alt="Next" />
-                    <div class="category-list">
-                        <a href="#" class="category-card"
-                            style="background-image:url('../Image/category_novel.jpg')">
-                            <span class="category-card__text">VISUAL NOVEL</span>
+            <!-- ============ 5. FOOTER ============ -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <div class="footer-brand">
+                        <img
+                            class="footer-brand__steamLogo"
+                            src="https://store.fastly.steamstatic.com/public/shared/images/header/logo_steam.svg?t=962016"
+                            alt="STEAM"
+                        />
+                        <span class="footer-brand__valveLogo">VALVE</span>
+                    </div>
+                    <p class="footer-content__copyright">
+                        © 2026 Valve Corporation. All rights reserved. All
+                        trademarks are property of their respective owners in
+                        the US and other countries. VAT included in all prices
+                        where applicable.
+                    </p>
+                    <div class="footer-social">
+                        <a
+                            href="#"
+                            class="footer-social__youtube"
+                            aria-label="YouTube"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <rect
+                                    x="2"
+                                    y="5"
+                                    width="20"
+                                    height="14"
+                                    rx="4"
+                                    stroke="currentColor"
+                                    stroke-width="1.6"
+                                />
+                                <path
+                                    d="M10 9.2 15 12l-5 2.8V9.2Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
                         </a>
-                        <a href="#" class="category-card"
-                            style="background-image:url('../Image/category_coop.jpg')">
-                            <span class="category-card__text">CO-OPERATIVE</span>
+                        <a
+                            href="#"
+                            class="footer-social__bsky"
+                            aria-label="Bluesky"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M12 8.6C10.6 6 7.7 4 5.5 4 3.9 4 3 5 3 6.6c0 3 4.2 6.4 7 8.1-.8-.1-2.6 0-3.6 1.7-1.3 2.2 0 3.6 1.3 3.6 1.7 0 3.4-2.4 4.3-4.1.9 1.7 2.6 4.1 4.3 4.1 1.3 0 2.6-1.4 1.3-3.6-1-1.7-2.8-1.8-3.6-1.7 2.8-1.7 7-5.1 7-8.1C21 5 20.1 4 18.5 4c-2.2 0-5.1 2-6.5 4.6Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
                         </a>
-                        <a href="#" class="category-card"
-                            style="background-image:url('../Image/category_strategy.jpg')">
-                            <span class="category-card__text">STRATEGY</span>
+                        <a
+                            href="#"
+                            class="footer-social__facebook"
+                            aria-label="Facebook"
+                        >
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M14.5 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7v2.1H9.3v2.8h2.4V21h2.8Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
                         </a>
-                        <a href="#" class="category-card"
-                            style="background-image:url('../Image/category_sports.jpg')">
-                            <span class="category-card__text">ALL SPORTS</span>
-                        </a>
-                        <a href="#" class="category-card"
-                            style="background-image:url('../Image/category_casual.jpg')">
-                            <span class="category-card__text">CASUAL</span>
+                        <a href="#" class="footer-social__X" aria-label="X">
+                            <svg
+                                viewBox="0 0 24 24"
+                                fill="none"
+                                aria-hidden="true"
+                            >
+                                <path
+                                    d="M4 4l7 9.2L4.4 20H6l5.9-6.4L16.4 20H20l-7.4-9.7L19.8 4h-1.6l-5.4 5.9L8 4H4Zm2.3 1.2h1.8l9.6 12.6h-1.8L6.3 5.2Z"
+                                    fill="currentColor"
+                                />
+                            </svg>
                         </a>
                     </div>
-                    <div class="category-carousel">
-                        <button type="button" class="category-carousel__button category-carousel__button--active"
-                            aria-label="Page 1"></button>
-                        <button type="button" class="category-carousel__button" aria-label="Page 2"></button>
-                        <button type="button" class="category-carousel__button" aria-label="Page 3"></button>
-                        <button type="button" class="category-carousel__button" aria-label="Page 4"></button>
-                    </div>
                 </div>
-            </section>
 
-            <!-- ============ 4.8 Budget (Under ...₫) ============ -->
-            <section class="budget-section">
-                <div class="budget-header">
-                    <h2 class="budget-header__title">Under 200.000₫</h2>
-                    <div class="budget-option">
-                        <span class="budget-option__text">See more:</span>
-                        <button type="button" class="budget-option__button budget-option__button--active">Under
-                            200.000₫</button>
-                        <button type="button" class="budget-option__button">Under 100.000₫</button>
-                    </div>
+                <div class="footer-links">
+                    <h4 class="footer-links__title">Steam</h4>
+                    <a href="#" class="footer-links__target">About Steam</a>
+                    <a href="#" class="footer-links__target">Steam SSA</a>
+                    <a href="#" class="footer-links__target">Steamworks</a>
+                    <a href="#" class="footer-links__target"
+                        >Steam Distribution</a
+                    >
+                    <a href="#" class="footer-links__target">Gift Cards</a>
                 </div>
-                <div class="budget-picks">
-                    <img class="arrow arrow__left" src="../Image/arrow_left.png" alt="Previous" />
-                    <img class="arrow arrow__right" src="../Image/arrow_right.png" alt="Next" />
-                    <div class="budget-list">
-                        <a href="#" class="budget-card">
-                            <img class="budget-card__image" src="../Image/budget_game_3.jpg"
-                                alt="IRON NEST: Heavy Turret Simulator" />
-                            <div class="budget-payment">
-                                <span class="budget-payment__sale">-25%</span>
-                                <span class="budget-payment__price">149.000₫</span>
-                            </div>
-                        </a>
-                        <a href="#" class="budget-card">
-                            <img class="budget-card__image" src="../Image/budget_game_2.jpg"
-                                alt="ReStory: Chill Electronics Repairs" />
-                            <div class="budget-payment">
-                                <span class="budget-payment__sale">-10%</span>
-                                <span class="budget-payment__price">180.000₫</span>
-                            </div>
-                        </a>
-                        <a href="#" class="budget-card">
-                            <img class="budget-card__image" src="../Image/budget_game_5.jpg" alt="GRAIN ROT" />
-                            <div class="budget-payment">
-                                <span class="budget-payment__sale">-10%</span>
-                                <span class="budget-payment__price">126.000₫</span>
-                            </div>
-                        </a>
-                        <a href="#" class="budget-card">
-                            <img class="budget-card__image" src="../Image/budget_game_4.jpg" alt="Fields of Mistria" />
-                            <div class="budget-payment">
-                                <span class="budget-payment__sale">-10%</span>
-                                <span class="budget-payment__price">173.000₫</span>
-                            </div>
-                        </a>
-                        <a href="#" class="budget-card">
-                            <img class="budget-card__image" src="../Image/budget_game_1.jpg" alt="Shift at Midnight" />
-                            <div class="budget-payment">
-                                <span class="budget-payment__price">149.500₫</span>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="budget-carousel">
-                        <button type="button" class="budget-carousel__button budget-carousel__button--active"
-                            aria-label="Page 1"></button>
-                        <button type="button" class="budget-carousel__button" aria-label="Page 2"></button>
-                        <button type="button" class="budget-carousel__button" aria-label="Page 3"></button>
-                        <button type="button" class="budget-carousel__button" aria-label="Page 4"></button>
-                        <button type="button" class="budget-carousel__button" aria-label="Page 5"></button>
-                    </div>
+                <div class="footer-links">
+                    <h4 class="footer-links__title">Valve</h4>
+                    <a href="#" class="footer-links__target">About Valve</a>
+                    <a href="#" class="footer-links__target">Jobs</a>
+                    <a href="#" class="footer-links__target">Hardware</a>
+                    <a href="#" class="footer-links__target">Recycling</a>
+                    <a href="#" class="footer-links__target">Steam Partners</a>
                 </div>
-            </section>
-        </main>
-
-        <!-- ============ 5. FOOTER ============ -->
-        <footer class="footer">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <img class="footer-brand__steamLogo" src="../Image/logo_steam.png" alt="STEAM" />
-                    <span class="footer-brand__valveLogo">VALVE</span>
+                <div class="footer-links">
+                    <h4 class="footer-links__title">Legal</h4>
+                    <a href="#" class="footer-links__target">Privacy</a>
+                    <a href="#" class="footer-links__target">Accessibility</a>
+                    <a href="#" class="footer-links__target"
+                        >Notices &amp; Policies</a
+                    >
+                    <a href="#" class="footer-links__target">Cookies</a>
+                    <a href="#" class="footer-links__target">Refunds</a>
                 </div>
-                <p class="footer-content__copyright">
-                    © 2026 Valve Corporation. All rights reserved. All trademarks are
-                    property of their respective owners in the US and other countries.
-                    VAT included in all prices where applicable.
-                </p>
-                <div class="footer-social">
-                    <a href="#" class="footer-social__youtube" aria-label="YouTube">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <rect x="2" y="5" width="20" height="14" rx="4" stroke="currentColor" stroke-width="1.6" />
-                            <path d="M10 9.2 15 12l-5 2.8V9.2Z" fill="currentColor" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer-social__bsky" aria-label="Bluesky">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path
-                                d="M12 8.6C10.6 6 7.7 4 5.5 4 3.9 4 3 5 3 6.6c0 3 4.2 6.4 7 8.1-.8-.1-2.6 0-3.6 1.7-1.3 2.2 0 3.6 1.3 3.6 1.7 0 3.4-2.4 4.3-4.1.9 1.7 2.6 4.1 4.3 4.1 1.3 0 2.6-1.4 1.3-3.6-1-1.7-2.8-1.8-3.6-1.7 2.8-1.7 7-5.1 7-8.1C21 5 20.1 4 18.5 4c-2.2 0-5.1 2-6.5 4.6Z"
-                                fill="currentColor" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer-social__facebook" aria-label="Facebook">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path
-                                d="M14.5 21v-7.2h2.4l.4-2.8h-2.8V9.2c0-.8.2-1.4 1.4-1.4h1.5V5.3c-.3 0-1.1-.1-2.1-.1-2.1 0-3.6 1.3-3.6 3.7v2.1H9.3v2.8h2.4V21h2.8Z"
-                                fill="currentColor" />
-                        </svg>
-                    </a>
-                    <a href="#" class="footer-social__X" aria-label="X">
-                        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
-                            <path
-                                d="M4 4l7 9.2L4.4 20H6l5.9-6.4L16.4 20H20l-7.4-9.7L19.8 4h-1.6l-5.4 5.9L8 4H4Zm2.3 1.2h1.8l9.6 12.6h-1.8L6.3 5.2Z"
-                                fill="currentColor" />
-                        </svg>
-                    </a>
+                <div class="footer-links">
+                    <h4 class="footer-links__title">More</h4>
+                    <a href="#" class="footer-links__target">Get Steam</a>
+                    <a href="#" class="footer-links__target">Get Mobile Apps</a>
+                    <a href="#" class="footer-links__target">Get Support</a>
+                    <a href="#" class="footer-links__target">My Account</a>
                 </div>
-            </div>
-
-            <div class="footer-links">
-                <h4 class="footer-links__title">Steam</h4>
-                <a href="#" class="footer-links__target">About Steam</a>
-                <a href="#" class="footer-links__target">Steam SSA</a>
-                <a href="#" class="footer-links__target">Steamworks</a>
-                <a href="#" class="footer-links__target">Steam Distribution</a>
-                <a href="#" class="footer-links__target">Gift Cards</a>
-            </div>
-            <div class="footer-links">
-                <h4 class="footer-links__title">Valve</h4>
-                <a href="#" class="footer-links__target">About Valve</a>
-                <a href="#" class="footer-links__target">Jobs</a>
-                <a href="#" class="footer-links__target">Hardware</a>
-                <a href="#" class="footer-links__target">Recycling</a>
-                <a href="#" class="footer-links__target">Steam Partners</a>
-            </div>
-            <div class="footer-links">
-                <h4 class="footer-links__title">Legal</h4>
-                <a href="#" class="footer-links__target">Privacy</a>
-                <a href="#" class="footer-links__target">Accessibility</a>
-                <a href="#" class="footer-links__target">Notices &amp; Policies</a>
-                <a href="#" class="footer-links__target">Cookies</a>
-                <a href="#" class="footer-links__target">Refunds</a>
-            </div>
-            <div class="footer-links">
-                <h4 class="footer-links__title">More</h4>
-                <a href="#" class="footer-links__target">Get Steam</a>
-                <a href="#" class="footer-links__target">Get Mobile Apps</a>
-                <a href="#" class="footer-links__target">Get Support</a>
-                <a href="#" class="footer-links__target">My Account</a>
-            </div>
-        </footer>
-    </div>
-</body>
-
+            </footer>
+        </div>
+    </body>
 </html>
