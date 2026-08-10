@@ -8,7 +8,7 @@
 }
 
 html {
-    font-size: 16px; /* 1rem = 16px, mọi rem quy về đây */
+    font-size: 16px;
     scroll-behavior: smooth;
 }
 
@@ -48,48 +48,38 @@ input {
 
 /* ---------- 2. CSS VARIABLES ---------- */
 :root {
-    /* Nền */
-    --color-bg: #1b2838; /* nền trang chính */
-    --color-bg-dark: #171a21; /* header / footer */
-    --color-bg-deep: #0e141b; /* nền tối hơn (banner) */
-    --color-bg-light: #2a475e; /* hover / highlight */
-    --color-bg-grey: #323f4b; /* khối xám */
+    --color-bg: #1b2838;
+    --color-bg-dark: #171a21;
+    --color-bg-deep: #0e141b;
+    --color-bg-light: #2a475e;
+    --color-bg-grey: #323f4b;
 
-    /* Chữ */
     --color-text: #c7d5e0;
     --color-text-light: #ffffff;
     --color-text-muted: #8f98a0;
-    --color-text-strike: #626366; /* giá gạch ngang */
+    --color-text-strike: #626366;
 
-    /* Accent xanh Steam */
     --color-accent: #66c0f4;
     --color-accent-hover: #ffffff;
 
-    /* Nút Install Steam (xanh lá) */
     --color-green: #5c7e10;
     --color-green-dark: #58831f;
     --color-green-text: #ffffff;
 
-    /* Khối giảm giá */
     --color-discount-bg: #4c6b22;
     --color-discount-border: #a4d007;
     --color-discount-text: #a4d007;
-    --color-discount-price: #beee11; /* giá sau giảm */
+    --color-discount-price: #beee11;
 
-    /* Font */
     --font-base: "Motiva Sans", Arial, Helvetica, sans-serif;
 
-    /* Kích thước chuẩn (rem) */
-    --gap-section: 2.5rem; /* khoảng cách giữa các khối lớn */
-    --content-max: 59rem; /* 1200px - bề rộng tối đa nội dung */
+    --gap-section: 2.5rem;
+    --content-max: 59rem;
 
-    /* hover nút Install Steam */
     --color-green-hover: #6f9a1a;
 }
 
 /* ---------- 3. LAYOUT NỀN TẢNG ---------- */
-
-/* .container = body: cột dọc full-width, footer luôn đáy */
 .container {
     display: flex;
     flex-direction: column;
@@ -97,7 +87,6 @@ input {
     width: 100%;
 }
 
-/* MAIN-CONTENT: khối chứa 8 section, tự căn giữa nội dung */
 .main-content {
     flex: 1 0 auto;
     width: 100%;
@@ -109,14 +98,8 @@ input {
     gap: var(--gap-section);
 }
 
-/* Khoảng cách cho từng khối con trong main-content
-   (bỏ comment dần khi đào sâu vào từng block) */
-.main-content > * {
-    /* margin-bottom: ...;  -> sẽ đặt riêng theo từng block */
-}
-
 /* ============================================================
-   1. HEADER  (block lớn #1)
+   1. HEADER
    ============================================================ */
 .header {
     width: 100%;
@@ -124,18 +107,16 @@ input {
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.35);
 }
 
-/* Wrapper căn giữa nội dung, full-width nhưng nội dung max-width */
 .header__content {
     max-width: var(--content-max);
     margin-inline: auto;
     padding-inline: 1rem;
-    min-height: 5rem; /* ~80px, cân đối hơn với nội dung */
+    min-height: 5rem;
     display: flex;
-    align-items: center; /* căn giữa dọc mọi thành phần */
+    align-items: center;
     gap: 2rem;
 }
 
-/* --- Logo --- */
 .header__steamLogo {
     display: inline-flex;
     align-items: center;
@@ -143,12 +124,11 @@ input {
 }
 
 .header__logo {
-    height: 2.75rem; /* 44px */
+    height: 2.75rem;
     width: auto;
     display: block;
 }
 
-/* --- Nav: chữ mặc định giống nhau hết, hover mới đổi --- */
 .header-nav {
     display: flex;
     align-items: center;
@@ -167,7 +147,6 @@ input {
     transition: color 0.15s ease;
 }
 
-/* Gạch dưới: chỉ hiện khi hover (CSS thuần, không cần JS) */
 .header-nav__page::after {
     content: "";
     position: absolute;
@@ -181,20 +160,18 @@ input {
 }
 
 .header-nav__page:hover {
-    color: var(--color-accent); /* tô màu xanh khi hover */
+    color: var(--color-accent);
 }
 
 .header-nav__page:hover::after {
-    transform: scaleX(1); /* gạch dưới xanh */
+    transform: scaleX(1);
 }
-/* (Bỏ active state vì click-active cần JS - nằm ngoài scope) */
 
-/* --- Actions: căn giữa dọc + kích thước đầy đủ --- */
 .header-actions {
     margin-left: auto;
     display: flex;
     align-items: center;
-    align-self: center; /* chắc chắn không bị dính lên trên */
+    align-self: center;
     gap: 1rem;
 }
 
@@ -205,7 +182,7 @@ input {
     font-weight: 700;
     letter-spacing: 0.03em;
     text-transform: uppercase;
-    padding: 0.65rem 1.4rem; /* nút to hơn hẳn trước */
+    padding: 0.65rem 1.4rem;
     border-radius: 0.125rem;
     box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     white-space: nowrap;
@@ -217,7 +194,7 @@ input {
 }
 
 .header-actions__signIn {
-    font-size: 0.9375rem; /* 15px thay vì 12px */
+    font-size: 0.9375rem;
     color: #b8b6b4;
     transition: color 0.15s ease;
 }
@@ -251,7 +228,7 @@ input {
 }
 
 /* ============================================================
-   2. STORE-NAV  (block lớn #2)
+   2. STORE-NAV
    ============================================================ */
 .store-nav {
     position: sticky;
@@ -262,7 +239,6 @@ input {
     border-bottom: 1px solid rgba(0, 0, 0, 0.3);
 }
 
-/* Wrapper căn giữa nội dung, khớp header */
 .store-nav__content {
     max-width: var(--content-max);
     margin-inline: auto;
@@ -274,7 +250,6 @@ input {
     gap: 2rem;
 }
 
-/* --- Menu trái --- */
 .store-menu {
     display: flex;
     align-items: center;
@@ -290,14 +265,14 @@ input {
     display: inline-flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.9375rem; /* 15px */
+    font-size: 0.9375rem;
     color: var(--color-text);
     white-space: nowrap;
     transition: color 0.15s ease;
 }
 
 .store-links__page:hover {
-    color: var(--color-accent); /* tô xanh khi hover */
+    color: var(--color-accent);
 }
 
 .store-links__caret {
@@ -306,12 +281,10 @@ input {
     opacity: 0.65;
 }
 
-/* Ẩn theo design tree (.store-menu__more hidden) */
 .store-menu__more {
     display: none;
 }
 
-/* --- Search bar --- */
 .search-bar {
     position: relative;
     display: flex;
@@ -324,7 +297,7 @@ input {
     background-color: #141e2a;
     border: 1px solid rgba(255, 255, 255, 0.12);
     border-radius: 0.125rem;
-    padding: 0.5rem 3rem 0.5rem 0.75rem; /* chừa khoảng cho nút bên phải */
+    padding: 0.5rem 3rem 0.5rem 0.75rem;
     font-size: 0.875rem;
     color: var(--color-text-light);
     transition: border-color 0.15s ease;
@@ -338,7 +311,6 @@ input {
     border-color: var(--color-accent);
 }
 
-/* Nút tìm kiếm: nền xanh + icon trắng, dính vào mép phải trong ô */
 .search-bar__icon {
     position: absolute;
     right: 0;
@@ -348,17 +320,17 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: var(--color-accent); /* nền xanh #66c0f4 */
-    color: #ffffff; /* icon trắng */
+    background-color: var(--color-accent);
+    color: #ffffff;
     border: none;
-    border-radius: 0 0.125rem 0.125rem 0; /* chỉ bo góc phải cho khớp ô input */
+    border-radius: 0 0.125rem 0.125rem 0;
     cursor: pointer;
     padding: 0;
     transition: background-color 0.15s ease;
 }
 
 .search-bar__icon:hover {
-    background-color: #54a5d6; /* đậm hơn khi hover */
+    background-color: #54a5d6;
 }
 
 .search-bar__icon svg {
@@ -388,7 +360,6 @@ input {
     width: 100%;
 }
 
-/* --- Header: title trái, Send a Gift Card phải --- */
 .feature-header {
     display: flex;
     align-items: center;
@@ -403,16 +374,14 @@ input {
     font-weight: 600;
 }
 
-/* Header: title trái, Send a Gift Card phải */
 .feature-header__button {
     display: inline-flex;
     align-items: flex-start;
     text-decoration: none;
 }
 
-/* Ảnh card art: cùng chiều cao với khối text, nhích xuống 0.05rem rồi đè lên mép trái */
 .feature-header__giftImage {
-    height: 2rem; /* = chiều cao khối text */
+    height: 2rem;
     width: auto;
     position: relative;
     z-index: 2;
@@ -421,7 +390,6 @@ input {
     display: block;
 }
 
-/* Text gradient: cùng chiều cao, padding-trái rộng để ảnh đè không mất chữ */
 .feature-header__giftText {
     background: linear-gradient(135deg, #2a475e 0%, #66c0f4 100%);
     color: #ffffff;
@@ -436,12 +404,10 @@ input {
     box-sizing: border-box;
 }
 
-/* --- Carousel chính --- */
 .recommend-game {
     position: relative;
 }
 
-/* Mũi tên: tách rời khỏi block giữa, là hình ảnh (img) */
 .arrow {
     position: absolute;
     top: 50%;
@@ -465,7 +431,6 @@ input {
     right: -3rem;
 }
 
-/* --- Block giữa: ảnh lớn trái + mô tả phải --- */
 .game-content {
     display: flex;
     align-items: stretch;
@@ -506,7 +471,7 @@ input {
 }
 
 .game-description__reviewStatus {
-    color: var(--color-accent); /* Very Positive -> xanh Steam */
+    color: var(--color-accent);
     font-weight: 600;
 }
 
@@ -514,7 +479,6 @@ input {
     color: var(--color-text-muted);
 }
 
-/* 4 ảnh nhỏ 2x2 */
 .game-image {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
@@ -529,7 +493,6 @@ input {
     background-color: var(--color-bg-grey);
 }
 
-/* Rank: 1 ảnh + 2 dòng chữ */
 .game-rank {
     display: flex;
     align-items: center;
@@ -566,16 +529,14 @@ input {
     font-weight: 600;
 }
 
-/* Giá: góc phải dưới */
 .price-box {
-    margin-top: auto; /* đẩy xuống đáy */
-    align-self: flex-end; /* nằm góc phải */
+    margin-top: auto;
+    align-self: flex-end;
     display: flex;
-    align-items: stretch; /* sale + prices cùng chiều cao */
+    align-items: stretch;
     font-size: 0;
 }
 
-/* Khối 1: sale (-50%) */
 .price-box__sale {
     background-color: var(--color-discount-bg);
     color: var(--color-discount-text);
@@ -588,7 +549,6 @@ input {
     border-right: 1px solid rgba(0, 0, 0, 0.2);
 }
 
-/* Khối 2: giá gốc + giá sau giảm (chung 1 khối, cùng hàng) */
 .price-box__prices {
     background-color: var(--color-bg-dark);
     border-radius: 0 0.125rem 0.125rem 0;
@@ -613,7 +573,6 @@ input {
     white-space: nowrap;
 }
 
-/* Biến thể chỉ 1 giá (Free To Play) */
 .price-box__price--only {
     background-color: var(--color-bg-dark);
     color: white;
@@ -624,7 +583,6 @@ input {
     white-space: nowrap;
 }
 
-/* 5 con nhộng (pill): nằm dưới game-content, cùng cấp với game-content + arrows */
 .transition {
     display: flex;
     justify-content: center;
@@ -646,7 +604,6 @@ input {
     background-color: rgba(255, 255, 255, 0.5);
 }
 
-/* Con nhộng đầu = slide đang hiển thị */
 .transition__button:first-child {
     background-color: var(--color-text-light);
 }
@@ -660,9 +617,9 @@ input {
 .main-content__event__image {
     display: block;
     width: 100%;
-    max-width: var(--content-max); /* 59rem - bằng game-content */
-    margin-inline: auto; /* căn giữa, có khoảng trống 2 bên */
-    height: 25vh; /* 1/4 màn hình desktop */
+    max-width: var(--content-max);
+    margin-inline: auto;
+    height: 25vh;
     object-fit: cover;
     object-position: center;
 }
@@ -672,13 +629,11 @@ input {
    ============================================================ */
 .discount-event {
     width: 100%;
-    /* Tỉ lệ banner: label = 1/20 ảnh single (~15px) */
-    --banner-img-h: 18.75rem; /* chiều cao ảnh single banner (~300px) */
-    --banner-label-h: 0.9375rem; /* label ~15px = 1/20 ảnh */
-    --banner-img-double: calc(var(--banner-img-h) * 2 / 5); /* 2/5 ảnh single */
+    --banner-img-h: 18.75rem;
+    --banner-label-h: 0.9375rem;
+    --banner-img-double: calc(var(--banner-img-h) * 2 / 5);
 }
 
-/* --- Header --- */
 .discount-header {
     display: flex;
     align-items: center;
@@ -705,12 +660,10 @@ input {
     transition: all 0.15s ease;
 }
 
-/* --- Carousel container (để arrow định vị) --- */
 .game-discount {
     position: relative;
 }
 
-/* --- 3 block: 2 single + 1 double, hàng ngang, căn trên --- */
 .discount-content {
     display: flex;
     align-items: stretch;
@@ -738,11 +691,9 @@ input {
     object-fit: cover;
 }
 
-/* Nhãn góc trên trái: viền trái trùng viền trái ảnh;
-   nửa trên nhích lên trên ảnh, nửa dưới đè lên ảnh */
 .game-discount-content__name {
     position: absolute;
-    top: calc(var(--banner-label-h) / 2 * -1); /* nhích lên 1 nửa label */
+    top: calc(var(--banner-label-h) / 2 * -1);
     left: 0;
     height: var(--banner-label-h);
     line-height: var(--banner-label-h);
@@ -783,22 +734,20 @@ input {
    ============================================================ */
 .panel {
     width: 100%;
-    max-width: var(--content-max); /* 59rem - bằng main-content__event */
+    max-width: var(--content-max);
     margin-inline: auto;
-    height: 21vh; /* nhỏ hơn 25vh của main-content__event */
-    min-height: 11rem; /* chặn dưới để không bẹp trên màn hình nhỏ */
+    height: 21vh;
+    min-height: 11rem;
     display: flex;
     align-items: center;
     justify-content: space-between;
     gap: 2rem;
     padding: 0 2.5rem;
-    /* Gradient tím → xanh (phương án A) */
     background: linear-gradient(135deg, #654c9e 0%, #2a6fb0 100%);
     border-radius: 0.25rem;
     overflow: hidden;
 }
 
-/* --- Text bên trái --- */
 .panel-description {
     flex: 1;
     min-width: 0;
@@ -810,8 +759,8 @@ input {
 }
 
 .panel-description__title {
-    font-size: 1.5rem; /* lớn hơn body */
-    font-weight: 700; /* đậm */
+    font-size: 1.5rem;
+    font-weight: 700;
     line-height: 1.2;
 }
 
@@ -821,7 +770,6 @@ input {
     opacity: 0.92;
 }
 
-/* Nút Sign In: chữ trắng, nền xanh */
 .panel-description__button {
     display: inline-block;
     margin-top: 0.25rem;
@@ -841,7 +789,6 @@ input {
     filter: brightness(1.15);
 }
 
-/* --- Ảnh bên phải --- */
 .panel__image {
     height: 100%;
     width: auto;
@@ -870,9 +817,8 @@ input {
     overflow: hidden;
 }
 
-/* --- Header (2 dòng text) --- */
 .tag-showcase__header {
-    padding: 1em 1em 0.25em;        /* trên/trái/phải 1em, dưới nhỏ (dính grid) */
+    padding: 1em 1em 0.25em;
 }
 
 .tag-showcase__title {
@@ -895,7 +841,6 @@ input {
     border-radius: 0.25rem;
 }
 
-/* --- Game card: ảnh trên + discount-box dưới --- */
 .game-card {
     display: flex;
     flex-direction: column;
@@ -910,7 +855,6 @@ input {
     background-color: var(--color-bg-grey);
 }
 
-/* --- Discount box: reuse kiểu dáng price-box --- */
 .discount-box {
     display: flex;
     align-self: flex-end;
@@ -978,12 +922,658 @@ input {
     filter: brightness(0.92);
 }
 
-/* ---------- 4. TRẠNG THÁI CHỜ (TẠM, SẼ BỎ DẦN) ---------- */
-/* Chỉ để hình dung khung xương, sau mỗi bước đào sâu sẽ thay bằng code thật */
-.header,
-.store-nav,
-.impression-banner,
-.main-content > section,
+/* ============================================================
+   4.6 POPULAR NEW RELEASES
+   ============================================================ */
+.release-section {
+    width: 100%;
+}
+
+/* --- Tabs --- */
+.release-header {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    margin-bottom: 1.25rem;
+}
+
+.release-tab {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--color-text-muted);
+    cursor: pointer;
+    border-bottom: 2px solid transparent;
+    margin-bottom: -1px;
+    transition: color 0.15s ease, border-color 0.15s ease;
+    white-space: nowrap;
+    background: none;
+}
+
+.release-tab:hover {
+    color: var(--color-text-light);
+}
+
+.release-tab--active {
+    color: var(--color-text-light);
+    font-weight: 600;
+    border-bottom-color: var(--color-accent);
+}
+
+/* ============================================================
+   BODY: 2 cột flex row
+   ============================================================ */
+.release-body {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1rem;
+    width: 100%;
+}
+
+/* --- CỘT TRÁI: danh sách card --- */
+.release-content {
+    flex: 1 1 0;
+    min-width: 0;
+}
+
+.release-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* --- Card --- */
+.release-card {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 0.5rem;
+    border-radius: 0.125rem;
+    transition: background-color 0.15s ease;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.release-card:hover {
+    background-color: rgba(255, 255, 255, 0.04);
+}
+
+.release-card__image {
+    width: 12rem;
+    height: 4.25rem;
+    object-fit: cover;
+    border-radius: 0.125rem;
+    flex-shrink: 0;
+    background-color: var(--color-bg-grey);
+}
+
+.release-card__info {
+    flex: 1 1 0;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+
+.release-card__description {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+    flex: 1 1 0;
+}
+
+.release-card__title {
+    color: var(--color-text-light);
+    font-size: 0.9375rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.release-card__genres {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.release-card__date {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+}
+
+.release-card__payment {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    flex-shrink: 0;
+}
+
+.release-card__sale {
+    background-color: var(--color-discount-bg);
+    color: var(--color-discount-text);
+    padding: 0.2rem 0.45rem;
+    border-radius: 0.125rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.release-card__price {
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* --- Expand toggle --- */
+.release-expand {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.625rem 0.5rem;
+    margin-top: 0.25rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.release-expand__text {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.release-expand__button {
+    padding: 0.25rem 0.75rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #000000;
+    background-color: #d6d6d6;
+    border: none;
+    border-radius: 0.125rem;
+    cursor: pointer;
+    transition: filter 0.15s ease;
+}
+
+.release-expand__button:hover {
+    filter: brightness(0.92);
+}
+
+/* ============================================================
+   CỘT PHẢI: preview panel
+   ============================================================ */
+.release-preview {
+    flex: 0 0 19.25rem;
+    width: 19.25rem;
+    position: sticky;
+    top: 4rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.25rem;
+    padding: 0.75rem;
+}
+
+/* Khối tiêu đề / review / tags nằm trên cùng, full width */
+.release-preview__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 0.25rem 0;
+}
+
+/* 4 ảnh screenshot xếp thành 1 cột dọc, mỗi ảnh full-width (giống Steam thật) */
+.release-preview__image {
+    width: 100%;
+    aspect-ratio: 308 / 155;
+    object-fit: cover;
+    border-radius: 0.125rem;
+    background-color: var(--color-bg-grey);
+    display: block;
+    transition: opacity 0.15s ease;
+    cursor: pointer;
+}
+
+.release-preview__image:hover {
+    opacity: 0.8;
+}
+
+.release-preview__title {
+    color: var(--color-text-light);
+    font-size: 1.125rem;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1.2;
+}
+
+.release-preview__meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.25rem;
+}
+
+.release-preview__review {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.release-preview__status {
+    font-size: 0.8125rem;
+    color: #66c0f4;
+    font-weight: 500;
+}
+
+.release-preview__number {
+    font-size: 0.75rem;
+    color: var(--color-text-muted);
+}
+
+.release-preview__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.375rem;
+}
+
+.release-preview__tag {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+    font-size: 0.6875rem;
+    color: var(--color-text);
+    background-color: rgba(255, 255, 255, 0.08);
+    border-radius: 0.125rem;
+    text-decoration: none;
+    transition: background-color 0.15s ease;
+}
+
+.release-preview__tag:hover {
+    background-color: rgba(255, 255, 255, 0.16);
+    color: var(--color-text-light);
+}
+
+/* ===== [TASK 6 - DEEPSEEK] SỬA release-card__sale ===== */
+.release-card__sale {
+    padding: 0.15rem 0.4rem;
+}
+
+/* ===== [TASK 6] BỔ SUNG giá không badge ===== */
+.release-card__price--only {
+    padding: 0.2rem 0.5rem;
+    background-color: var(--color-bg-dark);
+    border-radius: 0.125rem;
+    color: var(--color-text-light);
+    font-size: 0.875rem;
+    font-weight: 500;
+    white-space: nowrap;
+}
+
+/* ===== [TASK 6] SỬA .release-expand cho khớp .md ===== */
+.release-expand {
+    justify-content: flex-end;
+}
+
+/* ============================================================
+   4.7 BROWSE BY CATEGORY
+   ============================================================ */
+.category-section {
+    width: 100%;
+}
+
+.category-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.category-header__title {
+    color: var(--color-text-light);
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+/* --- Wrapper: giữ chỗ cho arrow trái/phải --- */
+.category-picks {
+    position: relative;
+}
+
+.category-list {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- Category card --- */
+.category-card {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    aspect-ratio: 3 / 2;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--color-bg-grey);
+    background-size: cover;
+    background-position: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.category-card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: rgba(0, 0, 0, 0.35);
+    transition: background-color 0.2s ease;
+}
+
+.category-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.category-card:hover::after {
+    background-color: rgba(0, 0, 0, 0.15);
+}
+
+.category-card__text {
+    position: relative;
+    z-index: 1;
+    background-color: #ffffff;
+    color: #1b2838;
+    padding: 0.5rem 1.1rem;
+    border-radius: 999px;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.02em;
+    white-space: nowrap;
+    text-align: center;
+}
+
+/* --- Dot pagination --- */
+.category-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.category-carousel__button {
+    width: 1.5rem;
+    height: 0.375rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.category-carousel__button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.category-carousel__button--active {
+    background-color: var(--color-text-light);
+}
+
+/* ============================================================
+   4.8 BUDGET (Under ...₫)
+   ============================================================ */
+.budget-section {
+    width: 100%;
+}
+
+.budget-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.budget-header__title {
+    color: var(--color-text-light);
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+.budget-option {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.budget-option__text {
+    font-size: 0.8125rem;
+    color: var(--color-text-muted);
+    margin-right: 0.1rem;
+}
+
+.budget-option__button {
+    background-color: gray;
+    color: black;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    padding: 0.4rem 0.9rem;
+    border: 1px solid rgba(102, 192, 244, 0.4);
+    border-radius: 0.125rem;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.budget-option__button:hover {
+    background-color: #a0a0a0;
+}
+
+.budget-option__button--active {
+    background-color: #d6d6d6;
+}
+
+/* --- Wrapper: giữ chỗ cho arrow trái/phải --- */
+.budget-picks {
+    position: relative;
+}
+
+.budget-list {
+    display: flex;
+    gap: 1rem;
+}
+
+/* --- Budget card (portrait capsule, giống Steam) --- */
+.budget-card {
+    position: relative;
+    flex: 1 1 0;
+    min-width: 0;
+    border-radius: 0.25rem;
+    overflow: hidden;
+    display: block;
+    background-color: var(--color-bg-grey);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.budget-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+.budget-card__image {
+    width: 100%;
+    aspect-ratio: 2 / 3;
+    object-fit: cover;
+    display: block;
+    background-color: var(--color-bg-grey);
+}
+
+/* Overlay giá / giảm giá ở góc dưới-phải ảnh */
+.budget-payment {
+    position: absolute;
+    right: 0.5rem;
+    bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    background-color: var(--color-bg-dark);
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.125rem;
+}
+
+.budget-payment__sale {
+    background-color: var(--color-discount-bg);
+    color: var(--color-discount-text);
+    padding: 0.15rem 0.4rem;
+    border-radius: 0.125rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.budget-payment__price {
+    color: var(--color-text-light);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+/* --- Dot pagination --- */
+.budget-carousel {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 0.75rem;
+}
+
+.budget-carousel__button {
+    width: 1.5rem;
+    height: 0.375rem;
+    border: none;
+    border-radius: 0.25rem;
+    background-color: rgba(255, 255, 255, 0.25);
+    cursor: pointer;
+    transition: background-color 0.15s ease;
+}
+
+.budget-carousel__button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+.budget-carousel__button--active {
+    background-color: var(--color-text-light);
+}
+
+/* ============================================================
+   5. FOOTER
+   ============================================================ */
 .footer {
-    /* min-height: 3rem; */
+    width: 100%;
+    background-color: var(--color-bg-dark);
+    margin-top: var(--gap-section);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 2.5rem max(1rem, calc((100% - var(--content-max)) / 2)) 3rem;
+}
+
+/* --- Khối trái: logo + copyright + social --- */
+.footer-content {
+    flex: 0 1 15rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.footer-brand__steamLogo {
+    height: 1.5rem;
+    width: auto;
+    opacity: 0.85;
+    display: block;
+}
+
+.footer-brand__valveLogo {
+    border: 1px solid rgba(255, 255, 255, 0.35);
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    padding: 0.2rem 0.55rem;
+}
+
+.footer-content__copyright {
+    color: var(--color-text-muted);
+    font-size: 0.75rem;
+    line-height: 1.5;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 1.1rem;
+}
+
+.footer-social__youtube,
+.footer-social__bsky,
+.footer-social__facebook,
+.footer-social__X {
+    color: var(--color-text-muted);
+    display: inline-flex;
+    transition: color 0.15s ease;
+}
+
+.footer-social__youtube svg,
+.footer-social__bsky svg,
+.footer-social__facebook svg,
+.footer-social__X svg {
+    width: 1.25rem;
+    height: 1.25rem;
+}
+
+.footer-social__youtube:hover,
+.footer-social__bsky:hover,
+.footer-social__facebook:hover,
+.footer-social__X:hover {
+    color: var(--color-text-light);
+}
+
+/* --- 4 cột link bên phải, nằm ngang hàng với footer-content --- */
+.footer-links {
+    flex: 0 1 8.5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.footer-links__title {
+    color: var(--color-text-light);
+    font-size: 0.8125rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    margin-bottom: 0.4rem;
+}
+
+.footer-links__target {
+    color: var(--color-text-muted);
+    font-size: 0.8125rem;
+    line-height: 1.5;
+    transition: color 0.15s ease;
+}
+
+.footer-links__target:hover {
+    color: var(--color-accent);
 }
