@@ -1,0 +1,96 @@
+```
+- STEAM - Login
+  - .container
+    - .header
+      - .header__steamLogo
+      - .header-nav
+        - .header-nav__page
+        - .header-nav__page
+        - .header-nav__page
+        - .header-nav__page
+      - .header-actions
+        - .header-actions__install
+        - .header-actions__signIn
+        - .header-actions__language
+    - .store-nav
+      - .store-links
+        - .store-links__page
+        - .store-links__page
+        - .store-links__page
+        - .store-links__page
+        - .store-links__page
+      - .search-bar
+        - .search-bar__input
+        - .search-bar__icon
+    - .main-content
+      - .login-page
+        - .login-container
+          - login-container__title
+          - .login-content
+            - .login-form
+              - .login-form__username
+                - .login-form__username-input
+                - .login-form__username-title
+              - .login-form__password
+                - .login-form__password-title
+                - .login-form__password-input
+              - .login-form__remember
+                - .remember-checkbox--checked
+                - .login-form__remember-description
+              - .login-form__submit-container
+                - .login-form__submit
+              - .login-form__help-link
+            - .login-qr
+              - .login-qr__title
+              - .login-qr__image
+              - .login-qr__mobile-app
+      - .cta
+        - .cta__description
+        - .cta__signup
+          - .cta-signup__submit
+          - .cta-signup__title
+    - .footer
+      - .footer-content
+        - .footer-brand
+          - .footer-brand__steamLogo
+          - .footer-brand__valveLogo
+        - .footer-content__copyright
+        - .footer-social
+          - .footer-social__btn
+          - .footer-social__btn
+          - .footer-social__btn
+          - .footer-social__btn
+      - .footer-links
+        - .footer-links__title
+        - .footer-links__target
+```
+
+|`- .footer-links__target`|
+|---|
+|`- .footer-links__target`<br>|
+|`- .footer-links__target`<br>|
+|`- .footer-links__target`<br>|
+|`- .footer-links`|
+|`- .footer-links__title`<br>|
+|`- .footer-links__target`<br>|
+|`- .footer-links__target`<br>|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links__target`<br>|
+|`- .footer-links`|
+|`- .footer-links__title`|
+|`- .footer-links__target`<br>|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links`|
+|`- .footer-links__title`|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+|`- .footer-links__target`|
+
+
+
