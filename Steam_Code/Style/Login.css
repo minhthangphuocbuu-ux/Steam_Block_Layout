@@ -1,0 +1,914 @@
+/* ==========================================================================
+   Steam – Sign In (Desktop UI clone)
+   Vanilla CSS mapped from the reference stylesheet.
+   Desktop-only: no media queries, no responsive/mobile rules.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Fonts
+   -------------------------------------------------------------------------- */
+@font-face {
+    font-family: 'Motiva Sans';
+    src: url('https://store.fastly.steamstatic.com/public/shared/fonts/MotivaSans-Regular.ttf?v=4.015') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Motiva Sans';
+    src: url('https://store.fastly.steamstatic.com/public/shared/fonts/MotivaSans-Light.ttf?v=4.015') format('truetype');
+    font-weight: 300;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Motiva Sans';
+    src: url('https://store.fastly.steamstatic.com/public/shared/fonts/MotivaSans-Medium.ttf?v=4.015') format('truetype');
+    font-weight: 500;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Motiva Sans';
+    src: url('https://store.fastly.steamstatic.com/public/shared/fonts/MotivaSans-Bold.ttf?v=4.015') format('truetype');
+    font-weight: bold;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Motiva Sans';
+    src: url('https://store.fastly.steamstatic.com/public/shared/fonts/MotivaSans-Black.ttf?v=4.015') format('truetype');
+    font-weight: 900;
+    font-style: normal;
+}
+
+/* --------------------------------------------------------------------------
+   2. Variables (kept minimal – only the dark-theme palette in use)
+   -------------------------------------------------------------------------- */
+:root {
+    --steam-darkest: #181A21;
+    --steam-dark: #171a21;
+    --steam-header: #171d25;
+    --steam-bg: #1b2838;
+    --steam-blue: #1a9fff;
+    --steam-blue-bright: #06BFFF;
+    --steam-blue-deep: #2D73FF;
+    --steam-blue-action: #45acff;
+    --steam-lightblue: #66c0f4;
+    --steam-text: #c6d4df;
+    --steam-text-bright: #dcdedf;
+    --steam-grey: #8F98A0;
+    --steam-grey-light: #b8b6b4;
+    --steam-grey-mid: #afafaf;
+    --steam-green: #5c7e10;
+    --steam-field: #32353c;
+    --steam-field-hover: #393C45;
+    --page-width: 1200px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Reset / Base
+   -------------------------------------------------------------------------- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    min-height: 100%;
+    min-width: 1024px;
+    /* desktop-only clone */
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 12px;
+    color: #c6d4df;
+    background-color: #1b2838;
+}
+
+img {
+    border: none;
+}
+
+a {
+    text-decoration: none;
+    color: #ffffff;
+}
+
+a:hover {
+    color: #66c0f4;
+}
+
+button,
+input {
+    font-family: "Motiva Sans", Arial, sans-serif;
+}
+
+/* Login page background (reference: body.page--login .page_content) */
+body.page--login {
+    background: radial-gradient(rgba(24, 26, 33, 0) 0%, #181A21 100%) fixed no-repeat,
+        url('https://store.fastly.steamstatic.com/public/shared/images/joinsteam/new_login_bg_strong_mask.jpg') center top no-repeat,
+        #181A21;
+    color: #E9E9E9;
+}
+
+.container {
+    width: 100%;
+}
+
+/* Empty-asset placeholders: faint block keeps exact layout when images fail */
+.header__steamLogo img,
+.footer-brand img {
+    background-color: rgba(255, 255, 255, 0.0);
+}
+
+/* --------------------------------------------------------------------------
+   4. Header
+   -------------------------------------------------------------------------- */
+.header {
+    display: flex;
+    align-items: flex-start;
+    height: 104px;
+    padding: 0 max(16px, calc((100% - 1200px) / 2));
+    background: #171d25;
+    font-family: "Motiva Sans", sans-serif;
+}
+
+.header__steamLogo {
+    display: block;
+    width: 176px;
+    height: 44px;
+    padding-top: 30px;
+    margin-right: 40px;
+}
+
+.header__steamLogo img {
+    display: block;
+}
+
+.header-nav {
+    display: flex;
+    flex: 1;
+    padding-top: 45px;
+}
+
+.header-nav__page {
+    display: block;
+    position: relative;
+    padding: 0 7px 7px;
+    line-height: 16px;
+    color: #dcdedf;
+    text-transform: uppercase;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.header-nav__page:hover {
+    color: #ffffff;
+}
+
+.header-nav__page--active {
+    color: #1a9fff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+    height: 21px;
+    line-height: 21px;
+    color: #b8b6b4;
+    font-size: 11px;
+}
+
+.header-actions__signIn {
+    color: #b8b6b4;
+    padding: 0 4px;
+}
+
+.header-actions__signIn::after {
+    content: "|";
+    padding-left: 4px;
+    color: #b8b6b4;
+}
+
+.header-actions__signIn:hover {
+    color: #ffffff;
+}
+
+.header-actions__language {
+    padding-left: 5px;
+    padding-right: 18px;
+    cursor: pointer;
+    background: url('https://store.fastly.steamstatic.com/public/shared/images/popups/btn_arrow_down_padded.png') right center no-repeat;
+}
+
+.header-actions__language:hover {
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   5. Main / Login page
+   -------------------------------------------------------------------------- */
+.main-content {
+    width: 100%;
+}
+
+.login-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 80px 0 150px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.login-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 688px;
+}
+
+.login-container__title {
+    align-self: flex-start;
+    margin: 8px 16px 32px;
+    color: #ffffff;
+    font-size: 28px;
+    font-weight: 800;
+    font-family: "Motiva Sans", sans-serif;
+}
+
+.login-content {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    padding: 24px 32px;
+    background-color: #181a21;
+    border-radius: 4px;
+}
+
+/* ---- form (left column) ---- */
+.login-form {
+    flex: 1;
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 12px;
+}
+
+.login-form__username,
+.login-form__password {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2px;
+}
+
+.login-form__username-title,
+.login-form__password-title,
+.login-qr__title {
+    font-size: 12px;
+    color: #1999ff;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+    user-select: none;
+}
+
+.login-form__username-input,
+.login-form__password-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #32353c;
+    border-radius: 2px;
+    background-color: #32353c;
+    color: #ffffff;
+    font-size: 15px;
+    outline: none;
+}
+
+.login-form__username-input:hover,
+.login-form__password-input:hover {
+    background-color: #393C45;
+    border-color: #393C45;
+}
+
+.login-form__username-input:focus,
+.login-form__password-input:focus {
+    border-color: #06bfff;
+}
+
+.login-form__remember {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.remember-checkbox {
+    flex: 0 0 20px;
+    width: 20px;
+    height: 20px;
+    padding: 3px;
+    border-radius: 2px;
+    background-color: #32353c;
+    cursor: pointer;
+}
+
+.remember-checkbox svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.remember-checkbox:hover {
+    background-color: #393C45;
+}
+
+.remember-checkbox:focus {
+    outline: 1px solid #06bfff;
+}
+
+.login-form__remember-description {
+    padding-left: 6px;
+    color: #afafaf;
+    font-size: 12px;
+    user-select: none;
+    cursor: pointer;
+}
+
+.login-form__submit-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.login-form__submit {
+    width: 270px;
+    padding: 12px;
+    border: none;
+    border-radius: 2px;
+    outline: none;
+    background: linear-gradient(90deg, #06BFFF 0%, #2D73FF 100%);
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: 400;
+    text-align: center;
+    cursor: pointer;
+}
+
+.login-form__submit:hover {
+    background: linear-gradient(90deg, #06BFFF 30%, #2D73FF 100%);
+}
+
+.login-form__submit:active {
+    background: linear-gradient(90deg, #06BFFF 50%, #2D73FF 100%);
+}
+
+.login-form__submit:focus {
+    outline: solid #06bfff;
+    outline-width: 1px;
+}
+
+.login-form__submit:disabled {
+    opacity: 0.5;
+    cursor: default;
+}
+
+.login-form__help-link {
+    text-align: center;
+    color: #afafaf;
+    font-size: 12px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.login-form__help-link:hover {
+    color: #c9c9c9;
+}
+
+/* ---- QR (right column) ---- */
+.login-qr {
+    flex: 0 0 200px;
+    margin-left: 40px;
+    display: grid;
+    gap: 4px;
+    align-content: start;
+}
+
+.login-qr__image {
+    width: 200px;
+    height: 200px;
+    margin: 2px 0 8px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    overflow: hidden;
+}
+
+.login-qr__svg {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.login-qr__mobile-app {
+    text-align: center;
+    font-size: 12px;
+    line-height: 17px;
+    color: #afafaf;
+}
+
+.login-qr__mobile-app a {
+    color: #afafaf;
+    text-decoration: underline;
+}
+
+.login-qr__mobile-app a:hover {
+    color: #c9c9c9;
+}
+
+/* --------------------------------------------------------------------------
+   6. CTA bottom row
+   -------------------------------------------------------------------------- */
+.cta {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-top: 48px;
+    background-color: #181A21;
+}
+
+.cta__signup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    text-align: center;
+}
+
+.cta-signup__title {
+    font-size: 20px;
+    font-weight: 800;
+    color: #ffffff;
+}
+
+.cta-signup__submit {
+    display: block;
+    margin: 10px 0;
+    padding: 3px 20px;
+    border-radius: 2px;
+    background: linear-gradient(to right, #47bfff 5%, #1a44c2 60%);
+    background-size: 330% 100%;
+    background-position: 25%;
+    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+    color: #ffffff;
+    text-align: center;
+    text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+}
+
+.cta-signup__submit span {
+    display: block;
+    padding: 0 15px;
+    font-size: 15px;
+    line-height: 30px;
+}
+
+.cta-signup__submit:hover {
+    color: #ffffff;
+    background-position: 0%;
+    box-shadow: 2px 2px 15px rgba(0, 0, 0, 0.5);
+}
+
+.cta__description {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    max-width: 300px;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #b8b6b4;
+    text-align: center;
+}
+
+.cta__about-link {
+    margin-top: 2px;
+    color: #b8b6b4;
+    text-decoration: underline;
+}
+
+.cta__about-link:hover {
+    color: #ffffff;
+}
+
+/* --------------------------------------------------------------------------
+   7. Footer
+   -------------------------------------------------------------------------- */
+.footer {
+    display: flex;
+    align-items: flex-start;
+    max-width: 1439px;
+    margin: 0 auto;
+    padding: 24px 0 48px;
+    background-color: #181A21;
+}
+
+.footer-content {
+    flex: 0 0 445px;
+    margin-right: 111px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 46px;
+}
+
+.footer-brand a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-brand__steamLogo img {
+    width: 92px;
+    height: 26px;
+}
+
+.footer-brand__valveLogo img {
+    width: 92px;
+    height: 25px;
+}
+
+
+
+.footer-content__copyright a:hover {
+    color: #ffffff;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+}
+
+.footer-social__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+.footer-social__btn svg {
+    width: 16px;
+    height: 16px;
+    fill: #676767;
+}
+
+.footer-social__btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.footer-social__btn:hover svg {
+    fill: #ffffff;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    width: 145px;
+}
+
+.footer-links+.footer-links {
+    margin-left: 23px;
+}
+
+
+
+.footer-links__target {
+    margin-bottom: 8px;
+    color: #C6D4DF;
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.footer-links__target:hover {
+    color: #ffffff;
+}
+
+.header-actions {
+    display: flex;
+    align-items: center;
+    padding-top: 6px;
+    height: 21px;
+    line-height: 21px;
+    color: #b8b6b4;
+    font-size: 11px;
+}
+
+.header-actions__install {
+    display: inline-block;
+    position: relative;
+    height: 21px;
+    line-height: 24px;
+    margin-right: 3px;
+    padding-left: 35px;
+    padding-right: 9px;
+    padding-bottom: 24px;
+    background-color: #5c7e10;
+    background-image: url('https://store.fastly.steamstatic.com/public/shared/images/header/btn_header_installsteam_download.png?v=1');
+    background-position: 10px 5px;
+    background-repeat: no-repeat;
+    color: #e5e4dc;
+    font-weight: normal;
+}
+
+.header-actions__install:hover {
+    color: #ffffff;
+}
+
+.header-actions__signIn {
+    color: #b8b6b4;
+    padding: 0 4px;
+}
+
+.header-actions__signIn::after {
+    content: "|";
+    padding-left: 4px;
+    color: #b8b6b4;
+}
+
+.header-actions__signIn:hover {
+    color: #ffffff;
+}
+
+.header-actions__language {
+    padding-left: 5px;
+    padding-right: 18px;
+    cursor: pointer;
+    background: url('https://store.fastly.steamstatic.com/public/shared/images/popups/btn_arrow_down_padded.png') right center no-repeat;
+}
+
+.header-actions__language:hover {
+    color: #ffffff;
+}
+
+.header-nav__page--active {
+    color: #1a9fff;
+}
+
+/* Active underline below STORE */
+.header-nav__page--active::after {
+    content: "";
+    position: absolute;
+    left: 7px;
+    right: 7px;
+    bottom: 2px;
+    height: 2px;
+    border-radius: 2px;
+    background: #1a9fff;
+}
+
+.store-nav {
+    display: flex;
+    align-items: center;
+    height: 46px;
+    padding: 0 max(16px, calc((100% - 1200px) / 2));
+    background: radial-gradient(107.95% 57.49% at 50% 100%, rgba(24, 37, 53, 0.2) 0%, rgba(24, 37, 53, 0.5216) 5%, rgba(24, 37, 53, 0.851) 20%, #182535 60%, #192330 100%);
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+    color: #dcdedf;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.store-links {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.store-links__page {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    height: 100%;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 400;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
+    white-space: nowrap;
+    cursor: pointer;
+}
+
+.store-links__page:hover {
+    color: #ffffff;
+}
+
+
+
+.store-links__chevron {
+    width: 14px;
+    height: 14px;
+    transition: transform 0.2s ease-in-out;
+}
+
+.store-links__page:hover .store-links__chevron {
+    transform: translateY(2px);
+}
+
+.search-bar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-left: auto;
+    width: 500px;
+    height: 34px;
+    border-radius: 2px;
+    background: hsla(0, 0%, 100%, 0.1255);
+}
+
+.search-bar__input {
+    flex: 1;
+    min-width: 0;
+    height: 100%;
+    padding-left: 10px;
+    width: 300px;
+    padding: 0 10px;
+    color: #ffffff;
+    font-size: 13px;
+    background-color: transparent;
+    border: 1px solid hsla(0, 0%, 100%, 0.1412);
+    border-right: none;
+    border-radius: 2px 0 0 2px;
+    outline: none;
+}
+
+.search-bar__input::placeholder {
+    color: #dcdedf;
+    font-size: 13px;
+    font-style: italic;
+    font-weight: 400;
+}
+
+.search-bar__input:hover {
+    border-color: rgba(26, 160, 255, 0.39);
+}
+
+.search-bar__input:hover::placeholder {
+    color: #ececec;
+}
+
+.search-bar__icon {
+    flex: 0 0 34px;
+    width: 34px;
+    height: 34px;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    border-radius: 0 1px 1px 0;
+    background: #1a9fff;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background 0.2s ease-out, box-shadow 0.2s ease-out;
+}
+
+.search-bar__icon svg {
+    width: 18px;
+    height: 18px;
+}
+
+.search-bar__icon:hover {
+    background: #45acff;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.2);
+}
+
+.footer {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    width: 100%;
+    padding: 40px 0 20px;
+    background: #181A21;
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+}
+
+.footer-content {
+    flex: 0 0 445px;
+    width: 445px;
+    margin-right: 30px;
+    margin-left: 100px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    height: 46px;
+}
+
+.footer-brand a {
+    display: inline-flex;
+    align-items: center;
+}
+
+.footer-brand__steamLogo img {
+    width: 92px;
+    height: 26px;
+}
+
+.footer-brand__valveLogo img {
+    width: 92px;
+    height: 25px;
+}
+
+.footer-content__copyright {
+    max-width: 358px;
+    color: #b2b7bb;
+    font-size: 11px;
+    line-height: 15px;
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+}
+
+
+
+.footer-content__copyright a:hover {
+    color: #ffffff;
+}
+
+.footer-social {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    height: 45px;
+}
+
+.footer-social__btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 2px;
+    background-color: rgba(255, 255, 255, 0.05);
+}
+
+
+
+.footer-social__btn:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 145px;
+    margin-top: 8px;
+    font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+}
+
+
+.footer-links__title {
+    margin-bottom: 8px;
+    color: rgb(223, 222, 222);
+    font-family: 'Motiva Sans';
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.footer-links__target {
+    margin-bottom: 8px;
+    color: #8b929a;
+    font-size: 13px;
+    line-height: 24px;
+    text-transform: none;
+}
+
+.footer-links__target:hover {
+    color: #ffffff;
+}
