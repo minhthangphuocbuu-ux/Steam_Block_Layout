@@ -1,4 +1,3 @@
-```
 - STEAM - Login
   - .container
     - .header
@@ -25,7 +24,7 @@
     - .main-content
       - .login-page
         - .login-container
-          - login-container__title
+          - .login-container__title
           - .login-content
             - .login-form
               - .login-form__username
@@ -63,34 +62,19 @@
       - .footer-links
         - .footer-links__title
         - .footer-links__target
-```
-
-|`- .footer-links__target`|
-|---|
-|`- .footer-links__target`<br>|
-|`- .footer-links__target`<br>|
-|`- .footer-links__target`<br>|
-|`- .footer-links`|
-|`- .footer-links__title`<br>|
-|`- .footer-links__target`<br>|
-|`- .footer-links__target`<br>|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links__target`<br>|
-|`- .footer-links`|
-|`- .footer-links__title`|
-|`- .footer-links__target`<br>|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links`|
-|`- .footer-links__title`|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-|`- .footer-links__target`|
-
-
-
+        - .footer-links__target
+        - .footer-links__target
+        - .footer-links__target
+      - .footer-links
+        - .footer-links__title
+        - .footer-links__target
+        - .footer-links__target
+        - .footer-links__target
+        - .footer-links__target
+      - .footer-links
+        - .footer-links__title
+        - .footer-links__target
+        - .footer-links__target
+        - .footer-links__target
+        - .footer-links__target
+        - .footer-links__target
