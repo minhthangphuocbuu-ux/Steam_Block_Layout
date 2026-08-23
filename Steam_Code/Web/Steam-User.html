@@ -4,13 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Steam Community Profile</title>
-  <link rel="stylesheet" href="Steam-User.css">
+  <link rel="stylesheet" href="../Style/Steam-User.css">
 </head>
 <body>
 
 <header class="header">
   <div class="header__wrapper">
-    
+
     <!-- Cụm bên trái: Logo & Menu Nav -->
     <div class="header__wrapper-inner">
       <a href="#" class="header__steamLogo">
@@ -33,7 +33,7 @@
         </svg>
         <span>Install Steam</span>
       </a>
-      
+
       <button class="header-actions__notification" aria-label="Notifications">
         <svg class="steam-icon" viewBox="0 0 16 16" fill="currentColor">
           <path d="M8 16a2 2 0 002-2H6a2 2 0 002 2zm6-6V6a6 6 0 10-12 0v4L0 12v1h16v-1l-2-2z"/>
@@ -50,7 +50,7 @@
 </header>
     <!-- MAIN CONTENT -->
     <main class="main-content">
-      
+
       <!-- TOP USER BANNER -->
       <section class="user-container">
         <div class="user__container--left">
@@ -83,17 +83,17 @@
 
       <!-- PRIMARY CONTENT FRAME -->
       <section class="user-activity-primary__frame">
-        
+
         <!-- LEFT SIDE CONTENT -->
         <div class="user__activity--leftside">
-          
+
           <div class="user__activity-container">
             <div class="user-activity__wrapper">
               <h2 class="user-activity__title">Recent Activity</h2>
             </div>
 
             <div class="user__game-container">
-              
+
               <!-- Game 1 -->
               <div class="game-1__container">
                 <div class="game__header-container--one">
@@ -185,7 +185,7 @@
 
         <!-- RIGHT SIDEBAR -->
         <div class="user__activity--rightside">
-          
+
           <div class="user-right__heading-container">
             <div class="user-right__current-status">Currently Offline</div>
             <div class="user-right__last-status">Last Online 82 days ago</div>
@@ -221,7 +221,7 @@
               <span class="user-right__friend-number">10</span>
             </div>
             <div class="user-right__friend-wrapper">
-              
+
               <div class="user-right__friend-card">
                 <img class="user-right__friend-avatar" src="https://avatars.akamai.steamstatic.com/4bb2e86fb0bd57fc5e707f5fc2117e61599b40e8_full.jpg" alt="Avatar">
                 <div class="user-right__friend-info">
@@ -292,7 +292,7 @@
       <img class="footer-brand__steamLogo" src="https://store.cloudflare.steamstatic.com/public/shared/images/header/logo_steam.svg" alt="Steam Logo">
       <img class="footer-brand__valveLogo" src="https://store.cloudflare.steamstatic.com/public/images/footerLogo_valve_new.png" alt="Valve Logo">
     </div>
-    
+
     <p class="footer-content__copyright">
       © 2026 Valve Corporation. All rights reserved. All trademarks are property of their respective owners in the US and other countries. VAT included in all prices where applicable.
     </p>
@@ -354,4 +354,12 @@
     </div>
   </div>
 </footer>
+<script src="../JS/SeedData.js"></script>
+<script src="../JS/AAccount.js"></script>
+<script src="../JS/Account.js"></script>
+<script src="../JS/AUser.js"></script>
+<script src="../JS/User.js"></script>
+<script src="../JS/SteamUser.js"></script>
+
+</body>
 </html>
