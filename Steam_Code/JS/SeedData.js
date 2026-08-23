@@ -1,6 +1,22 @@
 // Seed data đóng vai trò như database giả lập cho trang web (không có tính năng đăng ký).
 // Các trường bắt buộc: id (accountId), username, password, role, displayName.
 // Các trường còn lại tương ứng với dữ liệu hiển thị trên trang Steam-User.html.
+
+// Huy hiệu của từng game (tương ứng các img game-1__badge trong HTML tĩnh)
+const WALLPAPER_ENGINE_BADGES = [
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/53c2189431308f46ef77d0c5eb1ecac697d703a6.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/09f51531c6243518225293fcdc81c8894ba7def6.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/4f48b4262e14e6b25f09d7df1e00392b8c65d0f2.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/1c2250cab3953159e542b9ff4bd5be9ec75c9f61.jpg',
+];
+const UMAMUSUME_BADGES = [
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/3224770/0239d87a92fdebb9abc77768b223cb07720bd4d1.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/3224770/0239d87a92fdebb9abc77768b223cb07720bd4d1.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/3224770/0239d87a92fdebb9abc77768b223cb07720bd4d1.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/3224770/0239d87a92fdebb9abc77768b223cb07720bd4d1.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/3224770/0239d87a92fdebb9abc77768b223cb07720bd4d1.jpg',
+];
+
 const SEED_USERS = [
   {
     id: 'acc-100001',
@@ -28,6 +44,7 @@ const SEED_USERS = [
         lastPlayed: '5 Aug',
         achievementsUnlocked: 4,
         achievementsTotal: 17,
+        badges: WALLPAPER_ENGINE_BADGES,
       },
       {
         name: 'Umamusume: Pretty Derby',
@@ -36,6 +53,7 @@ const SEED_USERS = [
         lastPlayed: '26 Jul',
         achievementsUnlocked: 7,
         achievementsTotal: 20,
+        badges: UMAMUSUME_BADGES,
       },
     ],
     friends: [
@@ -69,6 +87,7 @@ const SEED_USERS = [
         lastPlayed: '5 Aug',
         achievementsUnlocked: 4,
         achievementsTotal: 17,
+        badges: WALLPAPER_ENGINE_BADGES,
       },
     ],
     friends: [
@@ -102,6 +121,7 @@ const SEED_USERS = [
         lastPlayed: '26 Jul',
         achievementsUnlocked: 7,
         achievementsTotal: 20,
+        badges: UMAMUSUME_BADGES,
       },
     ],
     friends: [
@@ -134,6 +154,7 @@ const SEED_USERS = [
         lastPlayed: '2 Aug',
         achievementsUnlocked: 1,
         achievementsTotal: 17,
+        badges: WALLPAPER_ENGINE_BADGES,
       },
     ],
     friends: [

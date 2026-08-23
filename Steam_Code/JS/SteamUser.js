@@ -83,9 +83,21 @@ function renderGames() {
 
     footerLeft.append(wrapper, bar);
     footer.appendChild(footerLeft);
+
+    // Cụm phải: huy hiệu game (game-1__badge) lấy từ seed data
+    const footerRight = el('div', 'game__footer-subcontainer--right');
+    (game.badges ?? []).forEach((badgeUrl) => {
+      const badgeImg = document.createElement('img');
+      badgeImg.className = 'game-1__badge';
+      badgeImg.src = badgeUrl;
+      badgeImg.alt = 'badge';
+      footerRight.appendChild(badgeImg);
+    });
+    footer.appendChild(footerRight);
+
     card.appendChild(footer);
 
-    container.appendChild(card);
+    container.appendChild(card)
   });
 }
 
@@ -211,7 +223,7 @@ const user = new User();
 if (!user.loadUserData()) {
   location.href = 'Login.html'; // chưa đăng nhập thì quay về trang login
 } else {
-  seedComments()
+  seedComments();
   renderHeader();
   renderGames();
   renderBadges();
