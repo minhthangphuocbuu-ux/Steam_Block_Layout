@@ -53,19 +53,6 @@ a:hover {
 }
 
 /* ==========================================================================
-   LAYOUT CONTAINER
-   ========================================================================== */
-.container {
-  max-width: 950px;
-  margin: 0 auto;
-  background-color: var(--steam-container-bg);
-  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
-/* ==========================================================================
    HEADER (Exact Steam Alignment & Layout)
    ========================================================================== */
 .header {
@@ -212,6 +199,13 @@ a:hover {
   flex: 1;
   zoom: 1.0;
   background: linear-gradient(to bottom right, rgba(12, 85, 241, 0.2), rgba(10, 14, 32, 0.93) 60%);
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: var(--steam-container-bg);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
 }
 
 /* Top Profile Banner */
@@ -449,6 +443,7 @@ a:hover {
 .game-1__progress-fill {
   height: 100%;
   border-radius: 3px; 
+  width: 25%;
   
   /* Dải màu gradient xám ánh tím giống Steam */
   background: linear-gradient(to bottom, #5d6175 0%, #2f3240 100%);
@@ -467,6 +462,13 @@ a:hover {
 }
 
 .game-1__badge {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.game-2__badge {
   width: 32px;
   height: 32px;
   object-fit: cover;
@@ -591,7 +593,7 @@ a:hover {
   gap: 14px;
 }
 
-.user-left__title-link {
+.user-right__title-link {
   font-size: 13px;
   color: var(--steam-text-heading);
   display: flex;
@@ -792,5 +794,6 @@ body {
 }
 
 .footer-column__link:hover {
-  color: #ffffff;
+  color: #8f98a0;
+  text-decoration: underline;
 }
