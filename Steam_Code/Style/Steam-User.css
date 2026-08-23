@@ -1,0 +1,799 @@
+/* ==========================================================================
+   RESET & COLOR PALETTE (Exact Steam Profile Match)
+   ========================================================================== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --steam-bg-dark: #080a0e;
+  --steam-body-bg: #0b0e14;
+  --steam-container-bg: #0a101d;
+  --steam-card-bg: rgba(0, 0, 0, 0.35);
+  --steam-card-hover: rgba(255, 255, 255, 0.05);
+  
+  --steam-text-heading: #ffffff;
+  --steam-text-primary: #8f98a0;
+  --steam-text-muted: #62686b;
+  --steam-blue-link: #ebebeb;
+  --steam-blue-highlight: #66c0f4;
+  --steam-online-cyan: #57cbde;
+  --steam-ingame-green: #90ba3c;
+  --steam-circle-above-10: 2px solid rgb(255, 99, 99);
+  --steam-circle-above-30: 2px solid #fffc4b;
+
+
+}
+
+body {
+  background-color: #000000;
+  background-image: 
+  radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
+  radial-gradient(circle at 15% 30%, rgba(20, 75, 70, 0.35) 0%, transparent 45%),
+  radial-gradient(circle at 85% 30%, rgba(40, 40, 40, 0.3) 0%, transparent 45%);
+  background-size: 6px 6px, 100% 100%, 100% 100%;  
+  background-attachment: fixed;
+  margin: 0;
+  overflow-x: hidden;
+  font-family: "Motiva Sans", Arial, Helvetica, sans-serif;
+  font-size: 13px;
+  min-height: 100vh;
+  zoom: 1.05;
+}
+
+a {
+  color: var(--steam-blue-link);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--steam-blue-highlight);
+}
+
+/* ==========================================================================
+   HEADER (Exact Steam Alignment & Layout)
+   ========================================================================== */
+.header {
+  width: 100%;
+  height: 104px;
+  background-color: #171a21;
+  box-sizing: border-box;
+  zoom: 1.0;
+}
+
+/* Ép khung 940px làm điểm tựa định vị chính xác */
+.header__wrapper {
+  width: 940px;
+  max-width: 940px;
+  height: 100%;
+  margin: 0 auto;
+  position: relative; /* QUAN TRỌNG: Giữ cụm nút không văng ra khỏi 940px */
+  box-sizing: border-box;
+}
+
+/* Cụm Logo & Nav Menu bên trái */
+.header__wrapper-inner {
+  display: flex;
+  align-items: center;
+  padding-top: 30px;
+}
+
+.header__steamLogo img {
+  width: 176px;
+  height: 44px;
+  object-fit: contain;
+  display: block;
+  margin-right: 36px;
+}
+
+.header-nav {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 6px;
+}
+
+.header-nav__page {
+  color: #dfdfdf;
+  font-size: 16px;
+  font-family: "Motiva Sans", "Twemoji", "Noto Sans", Helvetica, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  padding-bottom: 3px;
+  white-space: nowrap;
+  font-kerning: none; 
+  font-variant-ligatures: none;
+  text-transform: uppercase;
+}
+
+.header-nav__page:hover {
+  color: #ffffff;
+}
+
+.header-nav__page--active {
+  color: #1a9fff;
+  border-bottom: 3px solid #1a9fff;
+}
+
+/* Cụm Action Bar góc phải: Đặt sát góc phải khung 940px */
+.header-actions {
+  position: absolute;
+  top: 6px;
+  right: 55px; /* Khóa đúng lề phải 940px -> Install Steam kéo về ngay trên SUPPORT */
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.header-actions__install {
+  background-color: #21262d;
+  color: #e5e4dc;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  height: 24px;
+  padding: 0 9px;
+  border-radius: 2px;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.header-actions__install:hover {
+  background-color: #313843;
+  color: #ffffff;
+}
+
+.header-actions__notification {
+  background-color: #21262d;
+  color: #b8b6b4;
+  border: none;
+  width: 24px;
+  height: 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
+
+.steam-icon {
+  width: 12px;
+  height: 12px;
+}
+
+.header-actions__acc {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 4px;
+  cursor: pointer;
+}
+
+.header-actions__dropbox {
+  color: #b8b6b4;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.header-actions__avatar {
+  width: 32px;
+  height: 32px;
+  border: 1px solid #818181;
+  border-radius: 2px;
+  display: block;
+  object-fit: cover;
+}
+
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
+.main-content {
+  padding: 24px 28px;
+  flex: 1;
+  zoom: 1.0;
+  background: linear-gradient(to bottom right, rgba(12, 85, 241, 0.2), rgba(10, 14, 32, 0.93) 60%);
+  max-width: 950px;
+  margin: 0 auto;
+  background-color: var(--steam-container-bg);
+  box-shadow: 0 0 50px rgba(0, 0, 0, 0.9);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Top Profile Banner */
+.user-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 28px;
+}
+
+.user__container--left {
+  display: flex;
+  gap: 20px;
+}
+
+.user-avatar__frame {
+  width: 164px;
+  height: 164px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 2px;
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.user-avatar__frame img {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.user-title {
+  font-size: 26px;
+  color: var(--steam-text-heading);
+  font-weight: 300;
+}
+
+/* Level & Profile Button (Right Column Header) */
+.user__container--right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.user-level__container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.user-level__title {
+  font-size: 18px;
+  color: var(--steam-text-heading);
+  font-weight: 300;
+}
+
+.user-level__badge {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid var(--steam-text-heading);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  color: var(--steam-text-heading);
+}
+
+.user-level__xp-badge {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 8px 12px;
+  border-radius: 2px;
+  width: 220px;
+}
+
+.xp-badge__icon {
+  color: #fff;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: bold;
+}
+
+.xp-badge__title {
+  display: block;
+  color: #ffffff;
+  font-size: 12px;
+}
+
+.xp-badge__val {
+  display: block;
+  color: var(--steam-text-primary);
+  font-size: 11px;
+}
+
+.user__profile--redirect {
+  background: rgba(255, 255, 255, 0.1);
+  color: #c6d4df;
+  padding: 6px 14px;
+  border-radius: 2px;
+  font-size: 12px;
+}
+
+.user__profile--redirect:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+/* Primary Layout (2 Columns) */
+.user-activity-primary__frame {
+  display: flex;
+  gap: 32px;
+}
+
+.user__activity-container {
+  background-color: rgba(10, 14, 32, 0.8);
+  padding: 10px 12px 16px 12px;
+  border-radius: 4px;
+  padding: 10px 12px 16px 12px; 
+}
+
+/* Left Side Section */
+.user__activity--leftside {
+  flex: 1;
+}
+
+.user-activity__wrapper {
+  margin-bottom: 12px;
+}
+
+.user-activity__title {
+  font-size: 16px;
+  color: var(--steam-text-heading);
+  font-weight: 300;
+  background: linear-gradient(90deg, var(--gradient-showcase-header-left) 0%, var(--color-showcase-header) 90%);
+    background-image: linear-gradient(90deg, rgba(20, 33, 68, 0.93) 0%, rgba(34, 32, 61, 0.93) 90%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    background-repeat: initial;
+    background-attachment: initial;
+    background-origin: initial;
+    background-clip: initial;
+    background-color: initial;
+}
+
+.game-1__container {
+  background: var(--steam-card-bg);
+  padding: 12px;
+  margin-bottom: 16px;
+  border-radius: 2px;
+}
+
+.game__header-container--one {
+  display: flex;
+  gap: 14px;
+  margin-bottom: 12px;
+}
+
+.game-1__thumbnail-frame img {
+  width: 184px;
+  height: 69px;
+  object-fit: cover;
+  display: block;
+}
+
+.game-1__info-group {
+  flex: 1;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-1__name--redirect {
+  font-size: 14px;
+  color: #ffffff;
+}
+
+.game-1__meta {
+  font-size: 11px;
+  color: var(--steam-text-primary);
+  text-align: right;
+  line-height: 1.4;
+  padding-top: 40px;
+}
+
+.game-1__footer-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 8px 12px;
+  
+}
+
+.game__footer-subcontainer--left {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  flex: 0 0 auto;       /* Tắt flex-grow để không chiếm hết khoảng trống */
+  margin-right: 10px;
+}
+
+.game-1__wrapper {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.game-1__redirect--link {
+  color: #8f98a0;
+  margin-right: 8px;
+}
+
+.game-1__title-number {
+  color: #ffffff;
+}
+
+.game-1__progress-bar {
+  height: 8px;
+  width: 150px;
+  background-color: #000000;
+  box-shadow: inset 0px 1px 3px rgba(0, 0, 0, 0.8), 0px 1px 0px rgba(255, 255, 255, 0.05);
+  border: 1px solid #121822;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.game-1__progress-fill {
+  height: 100%;
+  border-radius: 3px; 
+  width: 25%;
+  
+  /* Dải màu gradient xám ánh tím giống Steam */
+  background: linear-gradient(to bottom, #5d6175 0%, #2f3240 100%);
+  
+  /* Tạo một chút ánh sáng hắt nhẹ ở mép trên cùng để thanh trông có vẻ lồi lên */
+  box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.15);
+}
+
+.game__footer-subcontainer--right {
+  display: flex;
+  flex-direction: row;
+  margin-left: 0;
+  justify-content: flex-start;
+  flex-grow: 0;
+  gap: 5px;
+}
+
+.game-1__badge {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+.game-2__badge {
+  width: 32px;
+  height: 32px;
+  object-fit: cover;
+  border-radius: 2px;
+}
+
+/* Comments Box */
+.feed__container {
+  background: var(--steam-card-bg);
+  padding: 16px;
+  margin-top: 24px;
+}
+
+.feed__heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.feed__heading-title {
+  font-size: 15px;
+  color: var(--steam-text-heading);
+  font-weight: 300;
+}
+
+.feed__thread {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 11px;
+}
+
+.feed__thread-title {
+  color: var(--steam-text-primary);
+}
+
+.feed__footer-wrapper {
+  display: flex;
+  gap: 12px;
+}
+
+.feed__avatar-frame img {
+  width: 36px;
+  height: 36px;
+}
+
+.feed__comment-space {
+  flex: 1;
+}
+
+.feed__comment-space input {
+  width: 100%;
+  background: #101722;
+  border: 1px solid #233041;
+  padding: 10px;
+  color: #fff;
+  border-radius: 2px;
+}
+
+/* Right Sidebar Section */
+.user__activity--rightside {
+    background-color: #101214;
+    background-color: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(20px);
+    width: 260px;
+    display: flex;
+    flex-direction: column;
+    gap: 32px; /* Tăng từ 20px lên 32px */
+    background: rgba(0, 0, 0, 0.3); 
+    padding: 16px;
+    box-sizing: border-box;
+}
+
+.user-right__heading-container {
+  margin-bottom: 4px;
+}
+
+.user-right__current-status {
+  font-size: 16px;
+  color: var(--steam-text-muted);
+}
+
+.user-right__last-status {
+  font-size: 12px;
+  color: var(--steam-text-primary);
+  display:flex;
+  gap: 12px;
+}
+
+.user-right__badge-container {
+  margin-bottom: 16px;
+}
+
+.user-right__title {
+  font-size: 16px;
+  color: var(--steam-text-heading);
+  margin-right: 6px;
+}
+
+.user-right__number {
+  font-size: 16px;
+  color: var(--steam-text-heading);
+}
+
+.user-right__badge-list {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.user-right__badge {
+  width: 48px;
+  height: 48px;
+  background: rgba(0, 0, 0, 0.4);
+  padding: 2px;
+}
+
+.user-right__categories {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.user-right__title-link {
+  font-size: 13px;
+  color: var(--steam-text-heading);
+  display: flex;
+  justify-content: flex-start;
+  gap: 8px;
+  align-items: baseline;
+}
+
+.user-left__title-link span {
+  color: var(--steam-text-primary);
+  font-size: 25px
+}
+
+/* Friends Section */
+.user-right__friend-container {
+  margin-top: 10px;
+}
+
+.user-right__friend-header {
+  font-size: 16px;
+  color: var(--steam-text-heading);
+  margin-bottom: 10px;
+  display: flex;
+  gap: 8px;
+}
+
+.user-right__friend-number {
+  color: var(--steam-text-primary);
+}
+
+.user-right__friend-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.user-right__friend-card {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 4px;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.user-right__friend-avatar {
+  width: 32px;
+  height: 32px;
+}
+
+.user-right__friend-info {
+  flex: 1;
+  overflow: hidden;
+}
+
+.user-right__friend-name {
+  color: var(--steam-text-muted);
+  font-size: 11px;
+  overflow: visible;
+  text-overflow: clip;
+  white-space: nowrap !important;
+  max-width: none;
+}
+
+.user-right__friend-status {
+  font-size: 10px;
+  color: var(--steam-text-muted);
+}
+
+.user-right__friend-status--online {
+  color: var(--steam-online-cyan);
+}
+
+.user-right__circle-above-10 {
+    border: var(--steam-circle-above-10) !important;
+}
+
+.user-right__circle-above-30 {
+    border: var(--steam-circle-above-30) !important;
+}
+
+.user-right__badge-number {
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 2px solid #4f5359;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 11px;
+  color: #ffffff;
+}
+
+/* ==========================================================================
+   FOOTER (Exact Steam Layout Match)
+   ========================================================================== */
+body {
+  overflow-x: hidden; 
+}
+
+/* 2. Giữ nguyên block Footer của bạn với công thức kéo dãn */
+.footer {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  background-color: #000000;
+  
+  /* Ép nội dung chữ dồn về giữa, khóa chặt trong mốc 940px */
+  padding: 36px calc((100vw - 940px) / 2);
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 32px;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  box-sizing: border-box;
+}
+
+/* Left Column */
+.footer-left {
+  position: relative;
+  right: 30px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  zoom: 1.15;
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.footer-brand__steamLogo {
+  height: 25px;
+  width: auto;
+}
+
+.footer-brand__valveLogo {
+  height: 22px;
+  width: auto;
+}
+
+.footer-content__copyright {
+  font-size: 11px;
+  line-height: 1.4;
+  color: var(--steam-text-primary);
+}
+
+.footer-socials {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-top: 4px;
+}
+
+.footer-socials-btn {
+  display: flex;
+}
+
+.footer-socials a {
+  color: #8f98a0;
+  transition: color 0.2s ease;
+  display: flex;
+  align-items: center;
+}
+
+/* Right Column (4 Link Columns) */
+.footer-right {
+  position: relative;
+  left: 45px;
+  display: flex;
+  gap: 60px;
+  zoom: 1.15;
+}
+
+.footer-column {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.footer-column__title {
+  color: #ffffff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  margin-bottom: 6px;
+}
+
+.footer-column__link {
+  font-size: 11px;
+  color: var(--steam-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+  white-space: nowrap;
+}
+
+.footer-column__link:hover {
+  color: #8f98a0;
+  text-decoration: underline;
+}
