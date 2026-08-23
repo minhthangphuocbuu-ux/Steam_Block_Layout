@@ -919,3 +919,6 @@ body.page--login {
 .footer-links__target:hover {
     color: #54a5d4;
 }
+
+.remember-checkbox svg { display: none; }
+.remember-checkbox--checked svg { display: block; }
