@@ -4,11 +4,10 @@
 
 // Huy hiệu của từng game (tương ứng các img game-1__badge trong HTML tĩnh)
 const WALLPAPER_ENGINE_BADGES = [
-  'https://shared.fastly.steamstatic.com/community_assets/images/apps/578080/9ef7ec6c4abfedc2a5436fc75b9f63bf9ae80161.jpg',
-  'https://shared.fastly.steamstatic.com/community_assets/images/apps/578080/bdcbf863a234b6a52bdfb20040bc4c532ab4228c.jpg',
-  'https://shared.fastly.steamstatic.com/community_assets/images/apps/578080/59abda8f6cfe24cb94398ce496a1aab1248a3f61.jpg',
-  'https://shared.fastly.steamstatic.com/community_assets/images/apps/578080/695926d869ab87005bbdc860f07c50d6f1dfd1ea.jpg',
-  'https://shared.fastly.steamstatic.com/community_assets/images/apps/578080/87a9515e254a339036809f3e3a2b3de1be3b1c82.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/53c2189431308f46ef77d0c5eb1ecac697d703a6.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/09f51531c6243518225293fcdc81c8894ba7def6.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/4f48b4262e14e6b25f09d7df1e00392b8c65d0f2.jpg',
+  'https://shared.akamai.steamstatic.com/community_assets/images/apps/431960/1c2250cab3953159e542b9ff4bd5be9ec75c9f61.jpg',
 ];
 const UMAMUSUME_BADGES = [
   'https://shared.akamai.steamstatic.com/community_assets/images/apps/3224770/0239d87a92fdebb9abc77768b223cb07720bd4d1.jpg',
