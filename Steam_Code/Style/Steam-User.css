@@ -473,13 +473,6 @@ a:hover {
   border-radius: 2px;
 }
 
-.game-2__badge {
-  width: 32px;
-  height: 32px;
-  object-fit: cover;
-  border-radius: 2px;
-}
-
 /* Comments Box */
 .feed__container {
   background: var(--steam-card-bg);
