@@ -67,7 +67,7 @@ function renderGames() {
     card.appendChild(header);
 
     // Footer: tiến trình achievement + thanh phần trăm
-    const footer = el('div', 'game__footer-container');
+    const footer = el('div', 'game-1__footer-container');
     const footerLeft = el('div', 'game__footer-subcontainer--left');
     const wrapper = el('div', 'game-1__wrapper');
     const progressLink = el('a', 'game-1__redirect--link', 'Achievement Progress');
@@ -211,6 +211,7 @@ const user = new User();
 if (!user.loadUserData()) {
   location.href = 'Login.html'; // chưa đăng nhập thì quay về trang login
 } else {
+  seedComments()
   renderHeader();
   renderGames();
   renderBadges();
@@ -237,5 +238,5 @@ if (user.accountId) {
       }
     });
   }
-  seedComments();
+
 }

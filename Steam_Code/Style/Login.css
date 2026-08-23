@@ -309,6 +309,12 @@ body.page--login {
     border-color: #06bfff;
 }
 
+.login-form__username-input.login-form__input--error,
+.login-form__password-input.login-form__input--error {
+    border-color: #c93f3f;
+    box-shadow: 0 0 4px rgba(201, 63, 63, 0.5);
+}
+
 .login-form__remember {
     display: flex;
     align-items: center;
