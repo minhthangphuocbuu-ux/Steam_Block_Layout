@@ -39,9 +39,11 @@ function showLoginError(message) {
   errorBox.textContent = message;
 }
 
-// Người dùng gõ lại thì viền đỏ báo lỗi biến mất
+// Người dùng gõ lại thì viền đỏ và thông báo lỗi biến mất
 document.querySelectorAll('.login-form__username-input, .login-form__password-input').forEach((input) => {
   input.addEventListener('input', () => {
     input.classList.remove('login-form__input--error');
+    const errorBox = document.querySelector('.login-form__error');
+    if (errorBox) errorBox.remove();
   });
 });
