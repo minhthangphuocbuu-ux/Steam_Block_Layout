@@ -59,10 +59,4 @@ class Account extends AAccount {
     return this._getStoredAccountId() !== null;
   }
 
-  logout() {
-    sessionStorage.removeItem('accountId');
-    localStorage.removeItem('accountId');
-    this._accountId = '';
-    this._rememberMe = false;
-  }
 }
