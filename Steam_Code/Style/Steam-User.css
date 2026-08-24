@@ -13,7 +13,7 @@
   --steam-container-bg: #0a101d;
   --steam-card-bg: rgba(0, 0, 0, 0.35);
   --steam-card-hover: rgba(255, 255, 255, 0.05);
-  
+
   --steam-text-heading: #ffffff;
   --steam-text-primary: #8f98a0;
   --steam-text-muted: #62686b;
@@ -29,11 +29,11 @@
 
 body {
   background-color: #000000;
-  background-image: 
+  background-image:
   radial-gradient(rgba(255, 255, 255, 0.04) 1px, transparent 1px),
   radial-gradient(circle at 15% 30%, rgba(20, 75, 70, 0.35) 0%, transparent 45%),
   radial-gradient(circle at 85% 30%, rgba(40, 40, 40, 0.3) 0%, transparent 45%);
-  background-size: 6px 6px, 100% 100%, 100% 100%;  
+  background-size: 6px 6px, 100% 100%, 100% 100%;
   background-attachment: fixed;
   margin: 0;
   overflow-x: hidden;
@@ -104,7 +104,7 @@ a:hover {
   letter-spacing: 0.4px;
   padding-bottom: 3px;
   white-space: nowrap;
-  font-kerning: none; 
+  font-kerning: none;
   font-variant-ligatures: none;
   text-transform: uppercase;
 }
@@ -328,7 +328,6 @@ a:hover {
   background-color: rgba(10, 14, 32, 0.8);
   padding: 10px 12px 16px 12px;
   border-radius: 4px;
-  padding: 10px 12px 16px 12px; 
 }
 
 /* Left Side Section */
@@ -402,7 +401,7 @@ a:hover {
   align-items: center;
   background: rgba(0, 0, 0, 0.3);
   padding: 8px 12px;
-  
+
 }
 
 .game__footer-subcontainer--left {
@@ -442,12 +441,12 @@ a:hover {
 
 .game-1__progress-fill {
   height: 100%;
-  border-radius: 3px; 
+  border-radius: 3px;
   width: 25%;
-  
+
   /* Dải màu gradient xám ánh tím giống Steam */
   background: linear-gradient(to bottom, #5d6175 0%, #2f3240 100%);
-  
+
   /* Tạo một chút ánh sáng hắt nhẹ ở mép trên cùng để thanh trông có vẻ lồi lên */
   box-shadow: inset 0px 1px 0px rgba(255, 255, 255, 0.15);
 }
@@ -538,7 +537,7 @@ a:hover {
     display: flex;
     flex-direction: column;
     gap: 32px; /* Tăng từ 20px lên 32px */
-    background: rgba(0, 0, 0, 0.3); 
+    background: rgba(0, 0, 0, 0.3);
     padding: 16px;
     box-sizing: border-box;
 }
@@ -690,7 +689,7 @@ a:hover {
    FOOTER (Exact Steam Layout Match)
    ========================================================================== */
 body {
-  overflow-x: hidden; 
+  overflow-x: hidden;
 }
 
 /* 2. Giữ nguyên block Footer của bạn với công thức kéo dãn */
@@ -699,10 +698,10 @@ body {
   margin-left: calc(50% - 50vw);
   margin-right: calc(50% - 50vw);
   background-color: #000000;
-  
+
   /* Ép nội dung chữ dồn về giữa, khóa chặt trong mốc 940px */
   padding: 36px calc((100vw - 940px) / 2);
-  
+
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
@@ -797,3 +796,15 @@ body {
   color: #8f98a0;
   text-decoration: underline;
 }
+
+.feed__comment-list { margin-top: 12px; }
+.feed__comment-item {
+  display: flex;
+  gap: 12px;
+  padding: 10px 0;
+  border-top: 1px solid #233041;
+}
+.feed__comment-avatar { width: 36px; height: 36px; flex-shrink: 0; }
+.feed__comment-meta { font-size: 11px; color: var(--steam-text-primary); margin-bottom: 4px; }
+.feed__comment-text { font-size: 13px; color: #fff; }
+.feed__comment-empty { font-size: 12px; color: var(--steam-text-muted); padding: 8px 0; }
